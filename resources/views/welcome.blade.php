@@ -28,7 +28,7 @@
               display: flex;
               justify-content: space-between;
               width: 100%;
-              
+
             }
             .full-height {
                 height: 100vh;
@@ -62,11 +62,11 @@
     <body>
       <div class="container">
         <div class="img-principal">
-          <img  src="/storage/jump_people_beach.jpg" alt="" style="width: 100%;">
+          <img  src="/img/jump_people_beach.jpg" alt="" style="width: 100%;">
 
           <div class="barra navbar navbar-expand-md navbar-light">
                   <div class="logo">
-                    <a href="{{ url('/') }}"><img class="" src="/storage/logo5.png" alt="" style="width: 50%;"></a>
+                    <a href="{{ url('/') }}"><img class="" src="/img/logo5.png" alt="" style="width: 50%;"></a>
                   </div>
               @if (Route::has('login'))
                   <div class="top-right links text-white">

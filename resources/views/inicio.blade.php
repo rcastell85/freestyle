@@ -12,13 +12,7 @@
         <div class="izquierda col-md-2" id="perfil">
           <div class="foto">
             <div class="img-perfil">
-              @if (session('status'))
-                <img class="avatar" src="/storage/avatar-masc.jpg" alt="" style="width: 100%;">
-              @else
                 <img class="avatar" src="/storage/{{$perfil->image}}" alt="" style="width:100%">
-              @endif
-
-
             </div>
           </div>
           <section class="informacion">
@@ -58,7 +52,7 @@
           <div class="post">
             <div class="id-post row">
               <div class="img-id-post col-md-1">
-                <img class="profile" src="/storage/like2.png" alt="perfil-posteo" style="width:100%;">
+                <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
               </div>
               <div class="nombre-id-post col-md-10">
                 <h5>Nombre</h5>
@@ -69,7 +63,7 @@
             </div>
             <div class="post-img">
                 <div class="principal-post">
-                  <img class="" src="/storage/free.jpg" alt="" style="width: 100%; height: 350px;">
+                  <img class="" src="/img/free.jpg" alt="" style="width: 100%; height: 350px;">
                   <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
                 </div>
             </div>
@@ -86,7 +80,7 @@
           <div class="post">
             <div class="id-post row">
               <div class="img-id-post col-md-1">
-                <img class="profile" src="/storage/like2.png" alt="perfil-posteo" style="width:100%;">
+                <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
               </div>
               <div class="nombre-id-post col-md-10">
                 <h5>Nombre</h5>
@@ -97,7 +91,7 @@
             </div>
             <div class="post-img">
                 <div class="principal-post">
-                  <img class="" src="/storage/free.jpg" alt="" style="width: 100%; height: 350px;">
+                  <img class="" src="/img/free.jpg" alt="" style="width: 100%; height: 350px;">
                   <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
                 </div>
             </div>
@@ -114,7 +108,7 @@
           <div class="post">
             <div class="id-post row">
               <div class="img-id-post col-md-1">
-                <img class="profile" src="/storage/like2.png" alt="perfil-posteo" style="width:100%;">
+                <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
               </div>
               <div class="nombre-id-post col-md-10">
                 <h5>Nombre</h5>
@@ -125,7 +119,7 @@
             </div>
             <div class="post-img">
                 <div class="principal-post">
-                  <img class="" src="/storage/free.jpg" alt="" style="width: 100%; height: 350px;">
+                  <img class="" src="/img/free.jpg" alt="" style="width: 100%; height: 350px;">
                   <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
                 </div>
             </div>
