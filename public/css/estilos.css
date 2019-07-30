@@ -58,7 +58,9 @@
      .item{
        padding-top: 5px;
      }
-
+    .post{
+      border-style: solid;
+    }
     .cuerpo{
       margin-top: 50px;
       display: flex;
@@ -72,7 +74,10 @@
        margin-top: 30px;
        -webkit-box-shadow: 0.5px 0.5px 0px lightgrey;
      }
-
+      .posteos{
+        display: flex;
+        flex-direction: column;
+      }
        .txt{
          margin-top: 30px;
          margin-bottom: 30px;

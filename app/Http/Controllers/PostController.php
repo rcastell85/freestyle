@@ -17,8 +17,9 @@ class PostController extends Controller
     public function index()
     {
       $posts = Post::all();
+      $perfil = Profile::all();
 
-      return view('mostrarPosts', compact('posts'));
+      return view('mostrarPosts', compact('posts', 'perfil'));
     }
 
     /**
