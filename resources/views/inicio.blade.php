@@ -141,7 +141,7 @@
        <div class="derecha col-md-3">
            <div class="chat row">
             <div class="img-id-post col-md-2">
-               <img class="profile" src="/storage/like2.png" alt="perfil-posteo" style="width:100%;">
+               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
              </div>
              <div class="nombre-id-post col-md-10">
                <h5>Nombre</h5>
@@ -149,7 +149,7 @@
            </div>
            <div class="chat row">
              <div class="img-id-post col-md-2">
-               <img class="profile" src="/storage/like2.png" alt="perfil-posteo" style="width:100%;">
+               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
              </div>
              <div class="nombre-id-post col-md-10">
                <h5>Nombre</h5>
@@ -157,7 +157,7 @@
            </div>
            <div class="chat row">
              <div class="img-id-post col-md-2">
-               <img class="profile" src="/storage/like2.png" alt="perfil-posteo" style="width:100%;">
+               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
              </div>
              <div class="nombre-id-post col-md-10">
                <h5>Nombre</h5>
@@ -165,7 +165,7 @@
            </div>
            <div class="chat row">
              <div class="img-id-post col-md-2">
-               <img class="profile" src="/storage/like2.png" alt="perfil-posteo" style="width:100%;">
+               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
              </div>
              <div class="nombre-id-post col-md-10">
                <h5>Nombre</h5>
@@ -173,7 +173,7 @@
            </div>
            <div class="chat row">
              <div class="img-id-post col-md-2">
-               <img class="profile" src="/storage/like2.png" alt="perfil-posteo" style="width:100%;">
+               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
              </div>
              <div class="nombre-id-post col-md-10">
                <h5>Nombre</h5>
@@ -181,7 +181,7 @@
            </div>
            <div class="chat row">
              <div class="img-id-post col-md-2">
-               <img class="profile" src="/storage/like2.png" alt="perfil-posteo" style="width:100%;">
+               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
              </div>
              <div class="nombre-id-post col-md-10">
                <h5>Nombre</h5>
@@ -189,7 +189,7 @@
            </div>
            <div class="chat row">
              <div class="img-id-post col-md-2">
-               <img class="profile" src="/storage/like2.png" alt="perfil-posteo" style="width:100%;">
+               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
              </div>
              <div class="nombre-id-post col-md-10">
                <h5>Nombre</h5>

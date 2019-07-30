@@ -50,3 +50,9 @@ Route::get('/inicio', function () {
 
 Route::post('/inicio', 'InicioController@store');
 Route::get('/inicio/{id}', 'InicioController@show');
+
+Route::get('/crearPost', function () {
+    return view('crearPost');
+});
+Route::post('/crearPost', 'PostController@store');
+Route::get('/mostrarPosts', 'PostController@index');
