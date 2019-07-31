@@ -12,7 +12,9 @@
                     <div class="foto">
                       <div class="img-perfil">
                         @foreach ($perfil as $element)
-                          <img class="avatar" src="/storage/{{$element->image}}" alt="" style="width:100%">
+                          @if ($element->user_id ==  auth()->user()->id)
+                            <img class="avatar" src="/storage/{{$element->image}}" alt="" style="width:100%">
+                          @endif
                         @endforeach
                       </div>
                     </div>
