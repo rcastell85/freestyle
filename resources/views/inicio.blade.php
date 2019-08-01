@@ -3,7 +3,7 @@
 @section('content')
 
 
-<body><br>
+<body>
 
       <div class="cuerpo-inicio row">
 
@@ -16,7 +16,7 @@
             </div>
           </div>
           <section class="informacion">
-            <ul>
+            <ul style="list-style: none";>
               <li><a href="perfil.php">Mi perfil</a></li>
               <li><a href="#">Mis Amigos</a></li>
               <li><a href="#">Mis Posteos</a></li>
@@ -29,9 +29,10 @@
 
         <div class="centro col-md-7">
           <div class="cuerpo-central">
+
             <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
                <li class="it nav-item">
-                 <a class="link-menu nav-link text-light" href="/crearPost">Nuevo Post +</a>
+                 <a class="link-menu nav-link text-light" href="/crearPost/{{$perfil->id}}">Nuevo Post +</a>
                </li>
                <li class="it nav-item">
                  <a class="nav-link text-light" href="#">Mis Amigos</a>
@@ -39,7 +40,7 @@
                <li class="it nav-item">
                    <a class="nav-link text-light" href="#">Link</a>
                </li>
-           </ul><br>
+            </ul><br>
 
            {{-- {{ $users= User::find(1) }} --}}
 
@@ -49,96 +50,66 @@
           <div class="search">
             <input type="text" name="search" value="" placeholder="Search..." style="width: 100%;">
           </div>
-          <div class="post">
-            <div class="id-post row">
-              <div class="img-id-post col-md-1">
-                <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-              </div>
-              <div class="nombre-id-post col-md-10">
-                <h5>Nombre</h5>
-              </div>
-              <div class="time-post col-md-1">
-                <p style="margin-bottom: 0px; color: gray;">2h.</p>
-              </div>
-            </div>
-            <div class="post-img">
-                <div class="principal-post">
-                  <img class="" src="/img/free.jpg" alt="" style="width: 100%; height: 350px;">
-                  <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
-                </div>
-            </div>
-            <div class="like-share row">
-              <div class="likes col-md-6">
-                <a href="#"><i class="far fa-arrow-alt-circle-up" style="width: 20px;"></i><p class="pie">500 likes</p></a>
-              </div>
-              <div class="likes col-md-6">
-                <a href="#"><i class="far fa-share-square"></i><p class="pie">Compartir</p></a>
-              </div>
-            </div>
-          </div>
 
-          <div class="post">
-            <div class="id-post row">
-              <div class="img-id-post col-md-1">
-                <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-              </div>
-              <div class="nombre-id-post col-md-10">
-                <h5>Nombre</h5>
-              </div>
-              <div class="time-post col-md-1">
-                <p style="margin-bottom: 0px; color: gray;">2h.</p>
-              </div>
-            </div>
-            <div class="post-img">
-                <div class="principal-post">
-                  <img class="" src="/img/free.jpg" alt="" style="width: 100%; height: 350px;">
-                  <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
-                </div>
-            </div>
-            <div class="like-share row">
-              <div class="likes col-md-6">
-                <a href="#"><i class="far fa-arrow-alt-circle-up" style="width: 20px;"></i><p class="pie">500 likes</p></a>
-              </div>
-              <div class="likes col-md-6">
-                <a href="#"><i class="far fa-share-square"></i><p class="pie">Compartir</p></a>
-              </div>
-            </div>
-          </div>
+                @forelse ($posts as $post)
 
-          <div class="post">
-            <div class="id-post row">
-              <div class="img-id-post col-md-1">
-                <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-              </div>
-              <div class="nombre-id-post col-md-10">
-                <h5>Nombre</h5>
-              </div>
-              <div class="time-post col-md-1">
-                <p style="margin-bottom: 0px; color: gray;">2h.</p>
-              </div>
-            </div>
-            <div class="post-img">
-                <div class="principal-post">
-                  <img class="" src="/img/free.jpg" alt="" style="width: 100%; height: 350px;">
-                  <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
+                <div class="post">
+                  <div class="id-post row">
+                    <div class="img-id-post col-md-1">
+                      <img src="/storage/{{$post->perfil->image}}" alt="" style="width: 40px;">
+                    </div>
+                    <div class="nombre-id-post col-md-10">
+                      <h5>{{$post->author}}</h5>
+                    </div>
+                    <div class="time-post col-md-1">
+                      <p style="margin-bottom: 0px; color: gray;">2h.</p>
+                    </div>
+                  </div>
+
+
+                    <div class="">
+                      @empty ($post->video)
+                        <img src="/storage/{{$post->image}}" alt="" style="max-width: 80%;">
+                      @else
+                        <video src="/storage/{{$post->video}}" autoplay muted loop controls style="max-width: 80%;"></video>
+                      @endempty
+                    </div>
+                    <div class="nombre-id-post col-md-10">
+                      <h5>{{$post->title}}</h5>
+                    </div>
+                    <div class="time-post col-md-1">
+                      <p style="margin-bottom: 0px; color: gray;">2h.</p>
+                    </div>
+
+                    <div class="like-share row">
+                      <div class="likes col-md-6">
+                        @if (!$post->likes->has(Auth::user()->id))
+                          <p>me likearon</p>
+                        @endif
+                        <form class="" action="/like" method="post">
+                          @csrf
+                          <input type="hidden" name="post_id" value="{{$post->id}}">
+                          <button type="submit" name="button">Like</button>
+                        </form>
+                        <a href="#"><input name="like" type="hidden" value= 1>likes</a>
+                      </div>
+                      <div class="likes col-md-6">
+                        <a href="#">Compartir</a>
+                      </div>
+                    </div>
                 </div>
-            </div>
-            <div class="like-share row">
-              <div class="likes col-md-6">
-                <a href="#"><i class="far fa-arrow-alt-circle-up" style="width: 20px;"></i><p class="pie">500 likes</p></a>
-              </div>
-              <div class="likes col-md-6">
-                <a href="#"><i class="far fa-share-square"></i><p class="pie">Compartir</p></a>
-              </div>
+                @empty
+                  <p>Este usuario no tiene posts</p>
+                @endforelse
+
             </div>
           </div>
-        </div>
-       </div>
 
                       <!-- PARTE DERECHA DEL BODY ---------------------------------------->
 
 
        <div class="derecha col-md-3">
+
            <div class="chat row">
             <div class="img-id-post col-md-2">
                <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
@@ -195,8 +166,8 @@
                <h5>Nombre</h5>
              </div>
            </div>
+
        </div>
       </div>
-    </div>
   </body>
 @endsection

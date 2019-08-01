@@ -12,14 +12,6 @@
   background-color: #6c757d;
 }
 
-
-.imagen{
-  background-image: url(../images/free.jpg);
-  position: relative;
-  background-repeat: no-repeat;
-  height: 500px;
-}
-
   .card{
     background-color: transparent;
     border: none;
@@ -32,6 +24,7 @@
     justify-content: space-around;
     margin-top: 40px;
   }
+
    .btn-registro{
     padding-left: 0px;
    }
@@ -40,11 +33,7 @@
      justify-content: center;
      color: #000;
    }
-   .img-principal{
-     /* display: flex;
-     justify-content: center; */
-     margin-top: 0px;
-   }
+
     a.items{
       color: #fff;
     }
@@ -58,9 +47,6 @@
      .item{
        padding-top: 5px;
      }
-    .post{
-      border-style: solid;
-    }
     .cuerpo{
       margin-top: 50px;
       display: flex;
@@ -78,6 +64,15 @@
         display: flex;
         flex-direction: column;
       }
+      #user-img{
+        display: flex;
+        justify-content: center;
+      }
+     .post{
+       position: relative;
+       border-style: solid;
+       margin: 15px 0;
+     }
        .txt{
          margin-top: 30px;
          margin-bottom: 30px;
@@ -86,7 +81,7 @@
 
        footer{
 
-          background-color: #6c757d
+          background-color: #6c757d;
           text-align: center;
         }
 
@@ -122,7 +117,9 @@
     width: 800px;
   }
 /*-----------------RESPONSIVE HOME ---------------------------------------------*/
+
 @media (max-width: 960px) {
   .login{
     display: none;
   }
+}

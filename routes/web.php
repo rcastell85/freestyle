@@ -44,15 +44,13 @@ Route::get('/cargarPerfil', function () {
 });
 Route::post('/cargarPerfil', 'ProfileController@store');
 
-Route::get('/inicio', function () {
-    return view('inicio');
-});
+Route::get('/inicio', 'InicioController@index')->middleware("auth");
+Route::post('/inicio', 'InicioController@store');       //cambiar
 
-Route::post('/inicio', 'InicioController@store');
-Route::get('/inicio/{id}', 'InicioController@show');
-
-Route::get('/crearPost', function () {
-    return view('crearPost');
+Route::get('/crearPost', function(){
+  return view('crearPost');
 });
 Route::post('/crearPost', 'PostController@store');
-Route::get('/mostrarPosts', 'PostController@index');
+Route::get('/crearPost/{id}', 'PostController@show');
+
+Route::post('/like', 'PostController@like');

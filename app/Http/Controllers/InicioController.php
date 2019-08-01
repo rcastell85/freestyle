@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Profile;
 use App\User;
+use App\Post;
+use Auth;
 use Illuminate\Http\Request;
 
 class InicioController extends Controller
@@ -15,9 +17,12 @@ class InicioController extends Controller
      */
     public function index()
     {
-      $users = Profile::all();
+      $user = Auth::user()->id;
+      $perfil = Profile::find($user);
+      $posts = Post::orderBy('updated_at',  'DESC')->get();
+      //dd($posts[0]->likes->has($user), $posts);
 
-      return view('inicio', compact('users'));
+      return view('inicio', compact('perfil', 'posts'));
     }
 
     /**
@@ -47,11 +52,13 @@ class InicioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-      $perfil = Profile::find($id);
-      
-      return view('inicio', compact('perfil'));
+      $user = Auth::user()->id;
+      $perfil = Profile::find($user);
+      $posts = Post::orderBy('updated_at',  'DESC')->get();
+
+      return view('inicio', compact('perfil', 'posts'));
     }
 
     /**

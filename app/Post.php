@@ -11,4 +11,12 @@ class Post extends Model
   public function user(){
     return $this->belongsTo("App\User", "user_id");
   }
+
+  public function perfil(){
+    return $this->belongsTo("App\Profile", "user_id");
+  }
+
+  public function likes(){
+    return $this->belongsToMany("App\User", "likes", "post_id", "user_id");
+  }
 }

@@ -40,10 +40,10 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function redirectTo(){
-      $var = auth()->user()->id;
-      return "/inicio/$var";
-    }
+    // public function redirectTo(){
+    //   $var = auth()->user()->id;
+    //   return "/inicio/$var";
+    // }
 
     // public function redirectPath(Request $req)
     // {

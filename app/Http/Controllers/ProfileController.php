@@ -71,7 +71,7 @@ class ProfileController extends Controller
 
         $nuevoPerfil->save();
 
-        return redirect("inicio/$nuevoPerfil->user_id");
+        return redirect("inicio");
 
     }
 
