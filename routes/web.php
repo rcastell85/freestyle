@@ -56,3 +56,10 @@ Route::get('/crearPost', function () {
 });
 Route::post('/crearPost', 'PostController@store');
 Route::get('/mostrarPosts', 'PostController@index');
+
+Route::get('/buscar', function () {
+    return view('buscar');
+});
+
+Route::post('/buscar', 'SearchController@store');
+Route::get('/buscar/{id}', 'SearchController@show');

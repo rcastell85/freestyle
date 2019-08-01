@@ -57,7 +57,7 @@ class ProfileController extends Controller
 
         $nuevoPerfil = new Profile();
 
-        $ruta = $req->file("image")->store("public");
+        $ruta = $req->file("image")->store("public/profiles");
         $nombreArchivo = basename($ruta);
 
 
