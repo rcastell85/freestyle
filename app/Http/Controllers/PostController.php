@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Profile;
 use App\Post;
+use Auth;
+use App\Like;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -16,10 +18,7 @@ class PostController extends Controller
      */
     public function index()
     {
-      $posts = Post::all();
-      $perfil = Profile::all();
 
-      return view('mostrarPosts', compact('posts', 'perfil'));
     }
 
     /**
@@ -75,7 +74,7 @@ class PostController extends Controller
 
         $nuevoPost->save();
 
-        return redirect("mostrarPosts");
+        return redirect("inicio");
     }
 
     /**
@@ -86,7 +85,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
+      $perfil = Profile::find($id);
 
+      return view('crearPost', compact('perfil'));
     }
 
     /**
@@ -121,5 +122,18 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function like(Request $req){
+      $user = Auth::user()->id;
+
+      $like = new Like;
+
+      $like->user_id = $user;
+      $like->post_id = $req["post_id"];
+
+      $like->save();
+
+      return redirect("/inicio");
     }
 }

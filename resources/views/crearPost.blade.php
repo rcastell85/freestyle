@@ -11,7 +11,7 @@
           <div class="izquierda col-md-2" id="perfil">
             <div class="foto">
               <div class="img-perfil">
-                  {{-- <img class="avatar" src="/storage/{{$user->perfil->image}}" alt="" style="width:100%"> --}}
+                  <img class="avatar" src="/storage/{{$perfil->image}}" alt="" style="width:100%">
               </div>
             </div>
             <section class="informacion">
@@ -28,20 +28,8 @@
 
           <div class="centro col-md-7">
             <div class="cuerpo-central">
-              <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
-                 <li class="it nav-item">
-                   <a class="link-menu nav-link text-light" href="#">Nuevo Post +</a>
-                 </li>
-                 <li class="it nav-item">
-                   <a class="nav-link text-light" href="#">Mis Amigos</a>
-                 </li>
-                 <li class="it nav-item">
-                     <a class="nav-link text-light" href="#">Link</a>
-                 </li>
-             </ul><br>
 
-
-            <div class="search">
+            <div class="search" style="padding: 25px;">
               <input type="text" name="search" value="" placeholder="Search..." style="width: 100%;">
             </div>
 
@@ -50,9 +38,11 @@
                 @csrf
                         <input name="userId" type="hidden" value="{{ Auth::user()->id }}">
                         <input name="author" type="hidden" value="{{ Auth::user()->username }}">
-                        <div class="tituloPost">
-                          <label for="title">Titulo de tu post</label>
-                          <input type="text" name="title" value="" placeholder="Mi titulo...">
+                        <div class="input-group mb-3 input-group-lg">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Titulo</span>
+                          </div>
+                          <input type="text" class="form-control" name="title">
                         </div>
                         <div class="postImg">
                           <label for="postImg">Subi una imagen</label>
