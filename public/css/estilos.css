@@ -28,7 +28,22 @@
     border-radius:150px;
 }
 .titleClass{
+  margin-left: 44%;
+}
+.lista-izquierda{
   text-align: center;
+}
+.cambio:hover, .cambio:hover {
+  background-color: #343a40!important;
+  color: white;
+}
+#menu-post{
+  text-align: center;
+  color: white;
+  margin-left: 40%;
+}
+#botonPost{
+  margin-left: 15%;
 }
 
 

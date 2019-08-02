@@ -69,8 +69,9 @@ class SearchController extends Controller
       $user = Auth::user()->id;
       $users =User::all();
       $perfiles = Profile::all();
+      $perfil = Profile::find($user);
 
-      return view('buscar', compact('user','users','perfiles'));  //
+      return view('buscar', compact('user','users','perfiles','perfil'));  //
     }
 
     /**

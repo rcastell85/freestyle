@@ -8,32 +8,32 @@
 
                   <!-- PARTE IZQUIERDA DEL BODY ------------------->
 
-          <div class="izquierda col-md-3" id="perfil">
-            <div class="foto">
-              <div class="img-perfil">
-                  <img class="avatar" src="/storage/profiles/{{$perfil->image}}" alt="" style="width:100%">
-              </div>
-            </div>
-            <section class="informacion">
-              <ul>
-                <li><a href="perfil.php">Mi perfil</a></li>
-                <li><a href="#">Mis Amigos</a></li>
-                <li><a href="#">Mis Posteos</a></li>
-                <li><a href="#">Mis Intereses</a></li>
-              </ul>
-            </section>
-          </div>
+                  <div class="izquierda col-md-3" id="perfil">
+                    <div class="foto">
+                      <div class="img-perfil">
+                          <img class="avatar" src="/storage/profiles/{{$perfil->image}}" alt="" style="width:100%">
+                      </div>
+                    </div>
+                    <section class="informacion">
+                      <ul class="lista-izquierda list-group"style="list-style: none";>
+                        <li class='cambio list-group-item'><a href="/inicio">Inicio</a></li>
+                        <li class='cambio list-group-item'><a href="perfil.php">Perfil</a></li>
+                        <li class='cambio list-group-item' ><a href="#">Amigos</a></li>
+                        <li class='cambio list-group-item'><a href="#">Posteos</a></li>
+
+                      </ul>
+                    </section>
+                  </div>
 
                       <!-- PARTE CENTRAL DEL BODY ---------------------------->
 
           <div class="centro col-md-9">
             <div class="cuerpo-central">
+              <ul class=" menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
+                 <h1 id='menu-post'>Crear Post</h1>
+             </ul><br>
 
-            <div class="search" style="padding: 25px;">
-              <input type="text" name="search" value="" placeholder="Search..." style="width: 100%;">
-            </div>
-
-            <div class="postear">
+                <div class="postear">
               <form class="postForm" action="/crearPost" method="post" enctype="multipart/form-data">
                 @csrf
                         <input name="userId" type="hidden" value="{{ Auth::user()->id }}">
@@ -46,10 +46,13 @@
                         </div>
                         <div class="postImg">
                           <label for="postImg">Subi una imagen</label>
+                          <br>
                           <input type="file" name="postImg" value="" placeholder="Subi lo que quieras...">
                         </div>
+                        <br>
                         <div class="postVideo">
                           <label for="postVideo">Subi un video</label>
+                          <br>
                           <input type="file" name="postVideo" value="" placeholder="Subi lo que quieras...">
                         </div>
                         <div id='botonPost'class="form-group">
