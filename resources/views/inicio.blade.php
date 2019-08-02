@@ -35,7 +35,7 @@
                  <a class="link-menu nav-link text-light" href="/crearPost/{{$perfil->id}}">Nuevo Post +</a>
                </li>
                <li class="it nav-item">
-                 <a class="nav-link text-light" href="#">Mis Amigos</a>
+                 <a class="nav-link text-light" href="/buscar/{{$perfil->id}}">Buscar</a>
                </li>
                <li class="it nav-item">
                    <a class="nav-link text-light" href="#">Link</a>
