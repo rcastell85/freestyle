@@ -9,7 +9,7 @@
 
                 <!-- PARTE IZQUIERDA DEL BODY ------------------->
 
-        <div class="izquierda col-md-2" id="perfil">
+        <div class="izquierda col-md-3" id="perfil">
           <div class="foto">
             <div class="img-perfil">
                 <img class="avatar" src="/storage/profiles/{{$perfil->image}}" alt="" style="width:100%">
@@ -27,7 +27,7 @@
 
                     <!-- PARTE CENTRAL DEL BODY ---------------------------->
 
-        <div class="centro col-md-7">
+        <div class="centro col-md-9">
           <div class="cuerpo-central">
 
             <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
@@ -44,130 +44,72 @@
 
            {{-- {{ $users= User::find(1) }} --}}
 
-           <h4>Bienvenido {{ $perfil->name }}</h4>
-           <p>Username: {{ auth()->user()->username }}</p>
+           <h4>Bienvenido: {{ auth()->user()->username }}</h4>
 
-          <div class="search">
-            <input type="text" name="search" value="" placeholder="Search..." style="width: 100%;">
+
+
+
+      @forelse ($posts as $post)
+        <div class="post">
+          <div class="id-post row">
+              <div class="img-id-post col-md-1">
+                  <img src="/storage/profiles/{{$post->perfil->image}}" alt="" style="width: 40px;">
+              </div>
+
+              <div class="nombre-id-post col-md-10">
+                  <h5>{{$post->author}}</h5>
+              </div>
+              <hr>
           </div>
+              <div class="time-post col-md-1">
+                  <p style="margin-bottom: 0px; color: gray;">2h.</p>
+              </div>
 
-                @forelse ($posts as $post)
+                    <hr>
+      @empty ($post->video)
+              <img class='postImg'src="/storage/PostImg/{{$post->image}}" alt="" style="">
+          @else
+              <video src="/storage/{{$post->video}}" autoplay muted loop controls style="max-width: 80%;"></video>
+          @endempty
+          <div class="titleClass nombre-id-post col-md-10">
+              <h5>{{$post->title}}</h5>
+          </div>
+          </div>
+              <div class="">
 
-                <div class="post">
-                  <div class="id-post row">
-                    <div class="img-id-post col-md-1">
-                      <img src="/storage/profiles/{{$post->perfil->image}}" alt="" style="width: 40px;">
-                    </div>
-                    <div class="nombre-id-post col-md-10">
-                      <h5>{{$post->author}}</h5>
-                    </div>
-                    <div class="time-post col-md-1">
-                      <p style="margin-bottom: 0px; color: gray;">2h.</p>
-                    </div>
-                  </div>
+                <div class="time-post col-md-1">
+                    <p style="margin-bottom: 0px; color: gray;">2h.</p>
+                </div>
 
-
-                    <div class="">
-                      @empty ($post->video)
-                        <img src="/storage/PostImg/{{$post->image}}" alt="" style="max-width: 80%;">
-                      @else
-                        <video src="/storage/{{$post->video}}" autoplay muted loop controls style="max-width: 80%;"></video>
-                      @endempty
+                <div class="like-share row">
+                    <div class="likes col-md-6">
+                  @if (!$post->likes->has(Auth::user()->id))
+                      <p>me likearon</p>
+                  @endif
+                <form class="" action="/like" method="post">
+                  @csrf
+                    <input type="hidden" name="post_id" value="{{$post->id}}">
+                    <button type="submit" name="button">Like</button>
+                </form>
+                      <a href="#"><input name="like" type="hidden" value= 1>likes</a>
                     </div>
-                    <div class="nombre-id-post col-md-10">
-                      <h5>{{$post->title}}</h5>
-                    </div>
-                    <div class="time-post col-md-1">
-                      <p style="margin-bottom: 0px; color: gray;">2h.</p>
-                    </div>
-
-                    <div class="like-share row">
-                      <div class="likes col-md-6">
-                        @if (!$post->likes->has(Auth::user()->id))
-                          <p>me likearon</p>
-                        @endif
-                        <form class="" action="/like" method="post">
-                          @csrf
-                          <input type="hidden" name="post_id" value="{{$post->id}}">
-                          <button type="submit" name="button">Like</button>
-                        </form>
-                        <a href="#"><input name="like" type="hidden" value= 1>likes</a>
-                      </div>
-                      <div class="likes col-md-6">
-                        <a href="#">Compartir</a>
-                      </div>
+                    <div class="likes col-md-6">
+                      <a href="#">Compartir</a>
                     </div>
                 </div>
+
+              </div>
+                    <hr>
+
                 @empty
                   <p>Este usuario no tiene posts</p>
                 @endforelse
 
-            </div>
+
           </div>
 
-                      <!-- PARTE DERECHA DEL BODY ---------------------------------------->
 
-
-       <div class="derecha col-md-3">
-
-           <div class="chat row">
-            <div class="img-id-post col-md-2">
-               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-             </div>
-             <div class="nombre-id-post col-md-10">
-               <h5>Nombre</h5>
-             </div>
-           </div>
-           <div class="chat row">
-             <div class="img-id-post col-md-2">
-               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-             </div>
-             <div class="nombre-id-post col-md-10">
-               <h5>Nombre</h5>
-             </div>
-           </div>
-           <div class="chat row">
-             <div class="img-id-post col-md-2">
-               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-             </div>
-             <div class="nombre-id-post col-md-10">
-               <h5>Nombre</h5>
-             </div>
-           </div>
-           <div class="chat row">
-             <div class="img-id-post col-md-2">
-               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-             </div>
-             <div class="nombre-id-post col-md-10">
-               <h5>Nombre</h5>
-             </div>
-           </div>
-           <div class="chat row">
-             <div class="img-id-post col-md-2">
-               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-             </div>
-             <div class="nombre-id-post col-md-10">
-               <h5>Nombre</h5>
-             </div>
-           </div>
-           <div class="chat row">
-             <div class="img-id-post col-md-2">
-               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-             </div>
-             <div class="nombre-id-post col-md-10">
-               <h5>Nombre</h5>
-             </div>
-           </div>
-           <div class="chat row">
-             <div class="img-id-post col-md-2">
-               <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-             </div>
-             <div class="nombre-id-post col-md-10">
-               <h5>Nombre</h5>
-             </div>
-           </div>
 
        </div>
-      </div>
   </body>
 @endsection

@@ -9,7 +9,7 @@
 
                 <!-- PARTE IZQUIERDA DEL BODY ------------------->
 
-        <div class="izquierda col-md-2" id="perfil">
+        <div class="izquierda col-md-3" id="perfil">
           <div class="foto">
             <div class="img-perfil">
                 {{-- <img class="avatar" src="/storage/{{$perfil->image}}" alt="" style="width:100%"> --}}
@@ -27,7 +27,7 @@
 
                     <!-- PARTE CENTRAL DEL BODY ---------------------------->
 
-        <div class="centro col-md-7">
+        <div class="centro col-md-9">
           <div class="cuerpo-central">
             <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
                <li class="it nav-item">
@@ -79,65 +79,8 @@
                       <!-- PARTE DERECHA DEL BODY ---------------------------------------->
 
 
-                      <div class="derecha col-md-3">
-                          <div class="chat row">
-                           <div class="img-id-post col-md-2">
-                              <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-                            </div>
-                            <div class="nombre-id-post col-md-10">
-                              <h5>Nombre</h5>
-                            </div>
-                          </div>
-                          <div class="chat row">
-                            <div class="img-id-post col-md-2">
-                              <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-                            </div>
-                            <div class="nombre-id-post col-md-10">
-                              <h5>Nombre</h5>
-                            </div>
-                          </div>
-                          <div class="chat row">
-                            <div class="img-id-post col-md-2">
-                              <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-                            </div>
-                            <div class="nombre-id-post col-md-10">
-                              <h5>Nombre</h5>
-                            </div>
-                          </div>
-                          <div class="chat row">
-                            <div class="img-id-post col-md-2">
-                              <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-                            </div>
-                            <div class="nombre-id-post col-md-10">
-                              <h5>Nombre</h5>
-                            </div>
-                          </div>
-                          <div class="chat row">
-                            <div class="img-id-post col-md-2">
-                              <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-                            </div>
-                            <div class="nombre-id-post col-md-10">
-                              <h5>Nombre</h5>
-                            </div>
-                          </div>
-                          <div class="chat row">
-                            <div class="img-id-post col-md-2">
-                              <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-                            </div>
-                            <div class="nombre-id-post col-md-10">
-                              <h5>Nombre</h5>
-                            </div>
-                          </div>
-                          <div class="chat row">
-                            <div class="img-id-post col-md-2">
-                              <img class="profile" src="/img/like2.png" alt="perfil-posteo" style="width:100%;">
-                            </div>
-                            <div class="nombre-id-post col-md-10">
-                              <h5>Nombre</h5>
-                            </div>
-                          </div>
-                      </div>
-                     </div>
+
+
                    </div>
                  </body>
                @endsection
