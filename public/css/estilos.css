@@ -37,6 +37,12 @@
   background-color: #343a40!important;
   color: white;
 }
+.it:hover, .it:hover {
+  background-color: #4C3943;
+}
+.menu-p{
+  padding-left: 15px;
+}
 #menu-post{
   text-align: center;
   color: white;
