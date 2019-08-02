@@ -11,11 +11,7 @@
                   <div class="izquierda col-md-2" id="perfil">
                     <div class="foto">
                       <div class="img-perfil">
-                        @foreach ($perfil as $element)
-                          @if ($element->user_id ==  auth()->user()->id)
-                            <img class="avatar" src="/storage/{{$element->image}}" alt="" style="width:100%">
-                          @endif
-                        @endforeach
+                            <img class="avatar" src="/storage/profiles/{{$perfil->image}}" alt="" style="width:100%">
                       </div>
                     </div>
                     <section class="informacion">
@@ -60,7 +56,7 @@
                           @empty ($post->video)
                             <img src="/storage/{{$post->image}}" alt="">
                           @else
-                            <video src="/storage/{{$post->video}}" autoplay muted loop controls width="640" height="480"></video>
+                            <video src="/storage/{{$post->video}}" muted loop controls width="640" height="480"></video>
                           @endempty
                         </div>
                         <div class="nombre-id-post col-md-10">

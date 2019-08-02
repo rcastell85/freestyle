@@ -11,7 +11,7 @@
           <div class="izquierda col-md-2" id="perfil">
             <div class="foto">
               <div class="img-perfil">
-                  <img class="avatar" src="/storage/{{$perfil->image}}" alt="" style="width:100%">
+                  <img class="avatar" src="/storage/profiles/{{$perfil->image}}" alt="" style="width:100%">
               </div>
             </div>
             <section class="informacion">

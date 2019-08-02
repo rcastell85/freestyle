@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Profile;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -15,7 +16,8 @@ class SearchController extends Controller
      */
     public function index()
     {
-      $users = Profile::all();
+      $users = Auth::user()->id;
+      $perfil = Profile::find($user);
 
       return view('buscar', compact('users'));  //
     }
@@ -47,13 +49,14 @@ class SearchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-      $perfil = Profile::find($id);
-      $users = Profile::all();
+      $user = Auth::user()->id;
+      $users = User::all();
+      $perfiles = Profile::all();
       // dd($users);
       // exit;
-      return view('buscar', compact('perfil','users'));  //
+      return view('buscar', compact('user', 'perfiles','users'));  //
     }
 
     /**

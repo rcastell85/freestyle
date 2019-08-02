@@ -51,6 +51,14 @@ Route::get('/crearPost', function(){
   return view('crearPost');
 });
 Route::post('/crearPost', 'PostController@store');
-Route::get('/crearPost/{id}', 'PostController@show');
+Route::get('/crearPost', 'PostController@show');
 
 Route::post('/like', 'PostController@like');
+
+Route::post('/buscar', 'SearchController@index');
+Route::get('/buscar', 'SearchController@show');
+
+Route::get('/perfilUsuario', function(){
+  return view('perfilUsuario');
+});
+Route::get('/perfilUsuario', 'PostController@mostrarPerfil');

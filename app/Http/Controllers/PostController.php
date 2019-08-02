@@ -83,11 +83,12 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-      $perfil = Profile::find($id);
+      $user = Auth::user()->id;
+      $perfil = Profile::find($user);
 
-      return view('crearPost', compact('perfil'));
+      return view('crearPost', compact('perfil', 'user'));
     }
 
     /**
@@ -126,14 +127,28 @@ class PostController extends Controller
 
     public function like(Request $req){
       $user = Auth::user()->id;
+      $cantidadLikes = Like::where('post_id', '=',  $req['post_id'])->count();
 
       $like = new Like;
 
       $like->user_id = $user;
       $like->post_id = $req["post_id"];
+      // if (isset($req["sumarLike"])) {
+      //   $like->cantidadLikes = $cantidadLikes + $req["sumarLike"];
+      // } elseif (isset($req["restarLike"])) {
+      //   $like->cantidadLikes = $cantidadLikes - $req["restarLike"];
+      // }
 
       $like->save();
+      return redirect('/inicio');
+      // return view("/inicio", compact('cantidadLikes'));
+    }
 
-      return redirect("/inicio");
+    public function mostrarPerfil(){
+      $user = Auth::user()->id;
+      $perfil = Profile::find($user);
+      $posts = Post::where('user_id', '=', $user)->orderBy('updated_at',  'DESC')->get();
+
+      return view('perfilUsuario', compact('perfil', 'posts'));
     }
 }
