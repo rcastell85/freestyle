@@ -12,7 +12,7 @@
         <div class="izquierda col-md-2" id="perfil">
           <div class="foto">
             <div class="img-perfil">
-                <img class="avatar" src="/storage/{{$perfil->image}}" alt="" style="width:100%">
+                {{-- <img class="avatar" src="/storage/{{$perfil->image}}" alt="" style="width:100%"> --}}
             </div>
           </div>
           <section class="informacion">
@@ -43,25 +43,23 @@
 
            {{-- {{ $users= User::find(1) }} --}}
 
-           <h4>Bienvenido {{ $perfil->name }}</h4>
-           <p>Username: {{ auth()->user()->username }}</p>
+           {{-- <h4>Bienvenido {{ $perfil->name }}</h4>
+           <p>Username: {{ auth()->user()->username }}</p> --}}
 
           <div class="search">
-            <input type="text" name="search" value="" placeholder="Search..." style="width: 100%;">
+            <form class="" action="{{url('/buscar')}}" method="post">
+              <input type="text" name="search" value="" placeholder="Buscar..." style="width:100%">
+            </form>
           </div>
-          @forelse ($users as $user)
-                         <div class="">
-                           <div class="">
-                             <div class="">
-                               <img src="/storage/profiles/{{$user->image}}" alt="" style="width: 50px;">
-                               <h5>{{$user->name}}</h5>
-                             </div>
+          @forelse ($perfiles as $perfil)
+                               <img src="/storage/profiles/{{$perfil->image}}" alt="" style="width: 50px;">
+                               <h5>{{$perfil->name}}</h5>
+                             <hr>
                          @empty
                            <p>Este usuario no tiene posts</p>
                          @endforelse
 
-                </div>
-                </div>
+
               </div>
               </div>
 
