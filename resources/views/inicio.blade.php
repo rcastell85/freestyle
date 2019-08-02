@@ -71,7 +71,7 @@
                       @empty ($post->video)
                         <img src="/storage/{{$post->image}}" alt="" style="max-width: 80%;">
                       @else
-                        <video src="/storage/{{$post->video}}" autoplay muted loop controls style="max-width: 80%;"></video>
+                        <video src="/storage/{{$post->video}}" muted loop controls style="max-width: 80%;"></video>
                       @endempty
                     </div>
                     <div class="nombre-id-post col-md-10">
@@ -84,14 +84,19 @@
                     <div class="like-share row">
                       <div class="likes col-md-6">
                         @if (!$post->likes->has(Auth::user()->id))
-                          <p>me likearon</p>
-                        @endif
                         <form class="" action="/like" method="post">
                           @csrf
                           <input type="hidden" name="post_id" value="{{$post->id}}">
-                          <button type="submit" name="button">Like</button>
+                          <input type="text" name="" value="">
+                          <button type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
                         </form>
-                        <a href="#"><input name="like" type="hidden" value= 1>likes</a>
+                      @else
+                        <form class="" action="/like" method="post">
+                          @csrf
+                          <input type="hidden" name="post_id" value="{{$post->id}}">
+                          <button type="submit" name="button"><i class="fas fa-heart"></i>Ya no me gusta</button>
+                        </form>
+                      @endif
                       </div>
                       <div class="likes col-md-6">
                         <a href="#">Compartir</a>
