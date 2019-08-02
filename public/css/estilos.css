@@ -11,6 +11,11 @@
 .hide{
   background-color: #6c757d;
 }
+.usuarios {
+    border-radius:150px;
+}
+
+
 
   .card{
     background-color: transparent;

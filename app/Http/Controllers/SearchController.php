@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Profile;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -15,9 +16,11 @@ class SearchController extends Controller
      */
     public function index()
     {
-      $users = Profile::all();
-
-      return view('buscar', compact('users'));  //
+      $user = Auth::user()->id;
+      $perfil = Profile::find($user);
+      dd($users);
+      exit;
+      return view('buscar', compact('user','perfil'));  //
     }
 
     /**
@@ -36,10 +39,24 @@ class SearchController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    // public function buscarAmigos($search)
+    // {
+    //   $search=urldecode($search);
+    //   $users=Profile::select()
+    //     ->where('user','LIKE','%'.$search.'%')
+    //     ->ordeBy('name','desc')
+    //     ->get();
+    //   if(count($users)==0){
+    //     return view('/buscar')
+    //     ->with('message','No hay resultados que mostrar')
+    //     ->with('search',$search);
+    //   }else{
+    //     return view('/buscar')
+    //     ->with('users',$users)
+    //     ->with('search',$search);
+    //   }
+    //
+    // }
 
     /**
      * Display the specified resource.
@@ -47,13 +64,13 @@ class SearchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-      $perfil = Profile::find($id);
-      $users = Profile::all();
-      // dd($users);
-      // exit;
-      return view('buscar', compact('perfil','users'));  //
+      $user = Auth::user()->id;
+      $users =User::all();
+      $perfiles = Profile::all();
+
+      return view('buscar', compact('user','users','perfiles'));  //
     }
 
     /**

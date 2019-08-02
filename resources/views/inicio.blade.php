@@ -12,7 +12,7 @@
         <div class="izquierda col-md-2" id="perfil">
           <div class="foto">
             <div class="img-perfil">
-                <img class="avatar" src="/storage/{{$perfil->image}}" alt="" style="width:100%">
+                <img class="avatar" src="/storage/profiles/{{$perfil->image}}" alt="" style="width:100%">
             </div>
           </div>
           <section class="informacion">
@@ -32,10 +32,10 @@
 
             <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
                <li class="it nav-item">
-                 <a class="link-menu nav-link text-light" href="/crearPost/{{$perfil->id}}">Nuevo Post +</a>
+                 <a class="link-menu nav-link text-light" href="/crearPost">Nuevo Post +</a>
                </li>
                <li class="it nav-item">
-                 <a class="nav-link text-light" href="/buscar/{{$perfil->id}}">Buscar</a>
+                 <a class="nav-link text-light" href="/buscar">Buscar</a>
                </li>
                <li class="it nav-item">
                    <a class="nav-link text-light" href="#">Link</a>
@@ -56,7 +56,7 @@
                 <div class="post">
                   <div class="id-post row">
                     <div class="img-id-post col-md-1">
-                      <img src="/storage/{{$post->perfil->image}}" alt="" style="width: 40px;">
+                      <img src="/storage/profiles/{{$post->perfil->image}}" alt="" style="width: 40px;">
                     </div>
                     <div class="nombre-id-post col-md-10">
                       <h5>{{$post->author}}</h5>
@@ -69,7 +69,7 @@
 
                     <div class="">
                       @empty ($post->video)
-                        <img src="/storage/{{$post->image}}" alt="" style="max-width: 80%;">
+                        <img src="/storage/PostImg/{{$post->image}}" alt="" style="max-width: 80%;">
                       @else
                         <video src="/storage/{{$post->video}}" autoplay muted loop controls style="max-width: 80%;"></video>
                       @endempty

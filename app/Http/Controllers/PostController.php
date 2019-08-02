@@ -58,7 +58,7 @@ class PostController extends Controller
 
         if (null !== $req->file("postImg")) {
 
-          $rutaImg = $req->file("postImg")->store("public");
+          $rutaImg = $req->file("postImg")->store("public/PostImg");
           $nombreArchivoImg = basename($rutaImg);
           $nuevoPost->image = $nombreArchivoImg;
         } else {
@@ -83,11 +83,12 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-      $perfil = Profile::find($id);
+      $user = Auth::user()->id;
+      $perfil = Profile::find($user);
 
-      return view('crearPost', compact('perfil'));
+      return view('crearPost', compact('perfil','user'));
     }
 
     /**

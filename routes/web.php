@@ -51,6 +51,19 @@ Route::get('/crearPost', function(){
   return view('crearPost');
 });
 Route::post('/crearPost', 'PostController@store');
-Route::get('/crearPost/{id}', 'PostController@show');
+Route::get('/crearPost', 'PostController@show');
 
 Route::post('/like', 'PostController@like');
+
+Route::post('/buscar', 'SearchController@index');
+Route::get('/buscar', 'SearchController@show');
+// Route::get('/buscar', function(){
+//
+//     if(empty($request->input('search')))
+//       return redirect()->back();
+//
+//       $search = urlencode(e($request->input('search')));
+//       $ruta= "/buscar/$search";
+//       return redirect($ruta);
+//   });
+//   Route::get("/buscar/{search}", "SearchController@buscarAmigos");

@@ -58,7 +58,7 @@
                         </div>
                         <div class="">
                           @empty ($post->video)
-                            <img src="/storage/{{$post->image}}" alt="">
+                            <img src="/storage/PostImg{{$post->image}}" alt="">
                           @else
                             <video src="/storage/{{$post->video}}" autoplay muted loop controls width="640" height="480"></video>
                           @endempty
