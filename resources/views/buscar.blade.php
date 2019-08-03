@@ -9,21 +9,22 @@
 
                 <!-- PARTE IZQUIERDA DEL BODY ------------------->
 
-        <div class="izquierda col-md-3" id="perfil">
-          <div class="foto">
-            <div class="img-perfil">
-                {{-- <img class="avatar" src="/storage/{{$perfil->image}}" alt="" style="width:100%"> --}}
-            </div>
-          </div>
-          <section class="informacion">
-            <ul>
-              <li><a href="perfil.php">Mi perfil</a></li>
-              <li><a href="#">Mis Amigos</a></li>
-              <li><a href="#">Mis Posteos</a></li>
-              <li><a href="#">Mis Intereses</a></li>
-            </ul>
-          </section>
-        </div>
+                <div class="izquierda col-md-3" id="perfil">
+                  <div class="foto">
+                    <div class="img-perfil">
+                        <img class="avatar" src="/storage/profiles/{{$perfil->image}}" alt="" style="width:100%">
+                    </div>
+                  </div>
+                  <section class="informacion">
+                    <ul class="lista-izquierda list-group"style="list-style: none";>
+                      <li class='cambio list-group-item'><a href="/inicio">Inicio</a></li>
+                      <li class='cambio list-group-item'><a href="perfil.php">Perfil</a></li>
+                      <li class='cambio list-group-item' ><a href="#">Amigos</a></li>
+                      <li class='cambio list-group-item'><a href="#">Posteos</a></li>
+
+                    </ul>
+                  </section>
+                </div>
 
                     <!-- PARTE CENTRAL DEL BODY ---------------------------->
 

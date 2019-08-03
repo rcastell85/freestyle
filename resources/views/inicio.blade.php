@@ -9,21 +9,22 @@
 
                 <!-- PARTE IZQUIERDA DEL BODY ------------------->
 
-        <div class="izquierda col-md-3" id="perfil">
-          <div class="foto">
-            <div class="img-perfil">
-                <img class="avatar" src="/storage/profiles/{{$perfil->image}}" alt="" style="width:100%">
-            </div>
-          </div>
-          <section class="informacion">
-            <ul style="list-style: none";>
-              <li><a href="/perfilUsuario">Mi perfil</a></li>
-              <li><a href="#">Mis Amigos</a></li>
-              <li><a href="#">Mis Posteos</a></li>
-              <li><a href="#">Mis Intereses</a></li>
-            </ul>
-          </section>
-        </div>
+                <div class="izquierda col-md-3" id="perfil">
+                  <div class="foto">
+                    <div class="img-perfil">
+                        <img class="avatar" src="/storage/profiles/{{$perfil->image}}" alt="" style="width:100%">
+                    </div>
+                  </div>
+                  <section class="informacion">
+                    <ul class="lista-izquierda list-group"style="list-style: none";>
+                      <li class='cambio list-group-item'><a href="/inicio">Inicio</a></li>
+                      <li class='cambio list-group-item'><a href="perfil.php">Perfil</a></li>
+                      <li class='cambio list-group-item' ><a href="#">Amigos</a></li>
+                      <li class='cambio list-group-item'><a href="#">Posteos</a></li>
+
+                    </ul>
+                  </section>
+                </div>
 
                     <!-- PARTE CENTRAL DEL BODY ---------------------------->
 
@@ -72,15 +73,17 @@
               <video src="/storage/{{$post->video}}" muted loop controls style="max-width: 80%;"></video>
           @endempty
 
+          </div>
           <div class="titleClass nombre-id-post col-md-10">
               <h5>{{$post->title}}</h5>
           </div>
-          </div>
-              <div class="">
 
-                <div class="time-post col-md-1">
-                    <p style="margin-bottom: 0px; color: gray;">2h.</p>
-                </div>
+
+
+
+
+
+              <div class="">
 
                 <div class="like-share row">
                     <div class="likes col-md-6">
@@ -101,7 +104,7 @@
                       @endif
 
                         @foreach ($likes as $key => $value)
-                      <p>cantidad de likes: {{$value->where('post_id', '=', $value->post_id)->count()}}</p>  
+                      <p>cantidad de likes: {{$value->where('post_id', '=', $value->post_id)->count()}}</p>
                     @endforeach
                     </div>
                   <div class="likes col-md-6">
