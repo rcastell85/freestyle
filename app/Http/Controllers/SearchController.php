@@ -16,10 +16,11 @@ class SearchController extends Controller
      */
     public function index()
     {
-      $users = Auth::user()->id;
+      $user = Auth::user()->id;
       $perfil = Profile::find($user);
-
-      return view('buscar', compact('users'));  //
+      dd($users);
+      exit;
+      return view('buscar', compact('user','perfil'));  //
     }
 
     /**
@@ -38,10 +39,24 @@ class SearchController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    // public function buscarAmigos($search)
+    // {
+    //   $search=urldecode($search);
+    //   $users=Profile::select()
+    //     ->where('user','LIKE','%'.$search.'%')
+    //     ->ordeBy('name','desc')
+    //     ->get();
+    //   if(count($users)==0){
+    //     return view('/buscar')
+    //     ->with('message','No hay resultados que mostrar')
+    //     ->with('search',$search);
+    //   }else{
+    //     return view('/buscar')
+    //     ->with('users',$users)
+    //     ->with('search',$search);
+    //   }
+    //
+    // }
 
     /**
      * Display the specified resource.

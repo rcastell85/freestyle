@@ -4,6 +4,19 @@
   list-style: none;
   box-sizing: border-box;
 }
+.cuerpo-inicio{
+  margin-right: 2%;
+    margin-left: 2%;
+}
+.postImg{
+  display:block;
+  margin:auto;
+  max-width: 100%;
+
+}
+.id-post{
+  max-width: 99%;
+}
 .container{
   max-width: 100%;
   padding: 0;
@@ -11,6 +24,15 @@
 .hide{
   background-color: #6c757d;
 }
+.usuarios {
+    border-radius:150px;
+}
+.titleClass{
+  text-align: center;
+}
+
+
+
 
   .card{
     background-color: transparent;
@@ -32,6 +54,9 @@
      display: flex;
      justify-content: center;
      color: #000;
+   }
+   h4{
+     text-align: center;
    }
 
     a.items{
@@ -70,7 +95,7 @@
       }
      .post{
        position: relative;
-       border-style: solid;
+       /* border-style: solid; */
        margin: 15px 0;
      }
        .txt{

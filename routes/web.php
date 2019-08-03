@@ -62,3 +62,6 @@ Route::get('/perfilUsuario', function(){
   return view('perfilUsuario');
 });
 Route::get('/perfilUsuario', 'PostController@mostrarPerfil');
+Route::get('/pru', function(){
+  return view('pru');
+});

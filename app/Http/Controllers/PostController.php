@@ -58,7 +58,7 @@ class PostController extends Controller
 
         if (null !== $req->file("postImg")) {
 
-          $rutaImg = $req->file("postImg")->store("public");
+          $rutaImg = $req->file("postImg")->store("public/PostImg");
           $nombreArchivoImg = basename($rutaImg);
           $nuevoPost->image = $nombreArchivoImg;
         } else {
@@ -127,21 +127,15 @@ class PostController extends Controller
 
     public function like(Request $req){
       $user = Auth::user()->id;
-      $cantidadLikes = Like::where('post_id', '=',  $req['post_id'])->count();
 
       $like = new Like;
 
       $like->user_id = $user;
       $like->post_id = $req["post_id"];
-      // if (isset($req["sumarLike"])) {
-      //   $like->cantidadLikes = $cantidadLikes + $req["sumarLike"];
-      // } elseif (isset($req["restarLike"])) {
-      //   $like->cantidadLikes = $cantidadLikes - $req["restarLike"];
-      // }
 
       $like->save();
+
       return redirect('/inicio');
-      // return view("/inicio", compact('cantidadLikes'));
     }
 
     public function mostrarPerfil(){
