@@ -57,13 +57,11 @@ Route::post('/like', 'PostController@like');
 
 Route::post('/buscar', 'SearchController@index');
 Route::get('/buscar', 'SearchController@show');
-// Route::get('/buscar', function(){
-//
-//     if(empty($request->input('search')))
-//       return redirect()->back();
-//
-//       $search = urlencode(e($request->input('search')));
-//       $ruta= "/buscar/$search";
-//       return redirect($ruta);
-//   });
-//   Route::get("/buscar/{search}", "SearchController@buscarAmigos");
+
+Route::get('/perfilUsuario', function(){
+  return view('perfilUsuario');
+});
+Route::get('/perfilUsuario', 'PostController@mostrarPerfil');
+Route::get('/pru', function(){
+  return view('pru');
+});

@@ -88,7 +88,7 @@ class PostController extends Controller
       $user = Auth::user()->id;
       $perfil = Profile::find($user);
 
-      return view('crearPost', compact('perfil','user'));
+      return view('crearPost', compact('perfil', 'user'));
     }
 
     /**
@@ -135,6 +135,14 @@ class PostController extends Controller
 
       $like->save();
 
-      return redirect("/inicio");
+      return redirect('/inicio');
+    }
+
+    public function mostrarPerfil(){
+      $user = Auth::user()->id;
+      $perfil = Profile::find($user);
+      $posts = Post::where('user_id', '=', $user)->orderBy('updated_at',  'DESC')->get();
+
+      return view('perfilUsuario', compact('perfil', 'posts'));
     }
 }

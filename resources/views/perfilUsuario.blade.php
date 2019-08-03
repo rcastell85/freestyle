@@ -11,11 +11,7 @@
                   <div class="izquierda col-md-2" id="perfil">
                     <div class="foto">
                       <div class="img-perfil">
-                        @foreach ($perfil as $element)
-                          @if ($element->user_id ==  auth()->user()->id)
-                            <img class="avatar" src="/storage/{{$element->image}}" alt="" style="width:100%">
-                          @endif
-                        @endforeach
+                            <img class="avatar" src="/storage/profiles/{{$perfil->image}}" alt="" style="width:100%">
                       </div>
                     </div>
                     <section class="informacion">
@@ -34,7 +30,7 @@
                     <div class="cuerpo-central">
                       <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
                          <li class="it nav-item">
-                           <a class="link-menu nav-link text-light" href="/crearPost">Nuevo Post +</a>
+                           <a class="link-menu nav-link text-light" href="/inicio">Inicio</a>
                          </li>
                          <li class="it nav-item">
                            <a class="nav-link text-light" href="#">Mis Amigos</a>
@@ -58,9 +54,9 @@
                         </div>
                         <div class="">
                           @empty ($post->video)
-                            <img src="/storage/PostImg{{$post->image}}" alt="">
+                            <img src="/storage/PostImg/{{$post->image}}" alt="">
                           @else
-                            <video src="/storage/{{$post->video}}" autoplay muted loop controls width="640" height="480"></video>
+                            <video src="/storage/{{$post->video}}" muted loop controls width="640" height="480"></video>
                           @endempty
                         </div>
                         <div class="nombre-id-post col-md-10">
@@ -68,6 +64,27 @@
                         </div>
                         <div class="time-post col-md-1">
                           <p style="margin-bottom: 0px; color: gray;">2h.</p>
+                        </div>
+                      </div>
+                      <div class="like-share row">
+                          <div class="likes col-md-6">
+                              @if (!$post->likes->has(Auth::user()->id))
+                                <form class="" action="/like" method="post">
+                                    @csrf
+                                    <input type="hidden" name="post_id" value="{{$post->id}}">
+                                    <button type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
+                                </form>
+                              @else
+                                <form class="" action="/like" method="post">
+                                    @csrf
+                                    <input type="hidden" name="post_id" value="{{$post->id}}">
+                                    <button type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
+                                </form>
+                            @endif
+                            <a href="#"><input name="like" type="hidden" value= 1>likes</a>
+                          </div>
+                        <div class="likes col-md-6">
+                            <a href="#">Compartir</a>
                         </div>
                       </div>
                     </div>

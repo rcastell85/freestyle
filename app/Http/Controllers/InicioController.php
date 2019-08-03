@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Profile;
 use App\User;
 use App\Post;
+use App\Like;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -20,9 +21,19 @@ class InicioController extends Controller
       $user = Auth::user()->id;
       $perfil = Profile::find($user);
       $posts = Post::orderBy('updated_at',  'DESC')->get();
-      //dd($posts[0]->likes->has($user), $posts);
 
-      return view('inicio', compact('perfil', 'posts'));
+      $likes = Like::all();   //->firstWhere('post_id', '=', $post->post_id)->count();
+
+      // foreach ($likes as $key => $value) {
+      //   dd($value->where('post_id', '=', $value->post_id)->count());
+      // }
+      // foreach ($posts as $value) {
+      //   dd($value);
+      // }
+
+
+
+      return view('inicio', compact('perfil', 'posts', 'likes'));
     }
 
     /**

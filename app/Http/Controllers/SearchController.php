@@ -67,11 +67,11 @@ class SearchController extends Controller
     public function show()
     {
       $user = Auth::user()->id;
-      $users =User::all();
+      $users = User::all();
       $perfiles = Profile::all();
-      $perfil = Profile::find($user);
-
-      return view('buscar', compact('user','users','perfiles','perfil'));  //
+      // dd($users);
+      // exit;
+      return view('buscar', compact('user', 'perfiles','users'));  //
     }
 
     /**
