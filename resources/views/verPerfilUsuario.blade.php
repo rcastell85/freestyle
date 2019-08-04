@@ -32,9 +32,17 @@
           <div class="cuerpo-central">
 
             <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
-               <li class="it nav-item">
-                 <a class="link-menu nav-link text-light" href="/crearPost">Nuevo Post +</a>
-               </li>
+
+                @if (in_array("$usuario", $seguido))
+                  <li class="it nav-item">
+                    <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}/seguido">Siguiendo</a>
+                  </li>
+                @else
+                  <li class="it nav-item">
+                    <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}/seguido">Seguir</a>
+                  </li>
+                @endif
+
                <li class="it nav-item">
                  <a class="nav-link text-light" href="/buscar">Buscar</a>
                </li>
@@ -77,45 +85,25 @@
               <div class="parteBajaPost">
                 <div class="like-share row">
                     <div class="likes col-md-6">
-<<<<<<< HEAD
                         {{-- @if (!$post->likes->has(Auth::user()->id)) --}}
-=======
-
-                        @if (!$post->hearts->has(Auth::user()->id))
->>>>>>> 9d8e47b93f8f5a66899c0c40ca2d90bad09b1a6a
                           <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
                           </form>
-<<<<<<< HEAD
 
 
-                        {{-- @else
-=======
-                        @else
->>>>>>> 9d8e47b93f8f5a66899c0c40ca2d90bad09b1a6a
+                        {{-- @else --}}
                           <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
                           </form>
-<<<<<<< HEAD
-                      @endif --}}
+                      {{-- @endif --}}
 
                         {{-- @foreach ($likes as $key => $value)
                       <p>cantidad de likes: {{$value->where('post_id', '=', $value->post_id)->count()}}</p>
                     @endforeach --}}
-=======
-                         @endif
-                         @foreach ($likes as $value)
-                          @if ($post->id == $value)
-                            <p style="color:#fff">
-                              like
-                            </p>
-                          @endif
-                        @endforeach
->>>>>>> 9d8e47b93f8f5a66899c0c40ca2d90bad09b1a6a
                     </div>
                   <div class="likes col-md-6">
                       <a href="#">Compartir</a>
@@ -127,15 +115,8 @@
                 @empty
                   <p>Este usuario no tiene posts</p>
                 @endforelse
-<<<<<<< HEAD
-
-<div class="paginate">
-  {{$posts->render()}}
-</div>
-=======
             </div>
 
->>>>>>> 9d8e47b93f8f5a66899c0c40ca2d90bad09b1a6a
           </div>
        </div>
   </body>

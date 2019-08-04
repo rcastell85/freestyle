@@ -40,12 +40,16 @@ body {
     text-transform: uppercase;
 }
 
-  .links > a:hover{
-    color: #fff;
-  }
-  .title-blue{
+.links > a:hover{
+  color: #fff;
+}
 
-    color: black;
+.botonBanner{
+  position: absolute;
+ }
+
+  .img
+  .title-blue{
     top: 40%;
     width: 100%;
     text-align: center;
@@ -67,4 +71,18 @@ body {
   }
   h2{
     font-weight: bold;
+  }
+  h1{
+    color: #204380;
+    font-weight: bold;
+  }
+
+  .haters{
+    position: relative;
+  }
+
+  .txt{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
   }

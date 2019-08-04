@@ -26,9 +26,12 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function perfilId($id)
     {
-
+      // $perfil = Profile::find($id);
+      // $posts = Post::where("user_id", "=", $perfil->id)->get();
+      // dd($posts);
+      // return view("verPerfilUsuario/$perfil->id", 'perfil', 'posts');
     }
 
     /**
