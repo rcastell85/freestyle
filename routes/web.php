@@ -36,7 +36,7 @@ if ($options['verify'] ?? false) {
     Route::emailVerification();
 }
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/inicio', 'HomeController@index')->name('inicio');
 
                 // Rutas de Perfil.....
 Route::get('/cargarPerfil', function () {
@@ -62,6 +62,6 @@ Route::get('/perfilUsuario', function(){
   return view('perfilUsuario');
 });
 Route::get('/perfilUsuario', 'PostController@mostrarPerfil');
-Route::get('/pru', function(){
-  return view('pru');
-});
+Route::get('/verPerfilUsuario/{id}', 'ProfileController@perfilId');
+
+Route::get('/verPerfilUsuario/{id}/seguido', 'ProfileController@seguir');

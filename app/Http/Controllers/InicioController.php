@@ -21,17 +21,7 @@ class InicioController extends Controller
       $user = Auth::user()->id;
       $perfil = Profile::find($user);
       $posts = Post::orderBy('updated_at',  'DESC')->get();
-
-      $likes = Like::all();   //->firstWhere('post_id', '=', $post->post_id)->count();
-
-      // foreach ($likes as $key => $value) {
-      //   dd($value->where('post_id', '=', $value->post_id)->count());
-      // }
-      // foreach ($posts as $value) {
-      //   dd($value);
-      // }
-
-
+      $likes = Like::all()->pluck('post_id')->toArray();
 
       return view('inicio', compact('perfil', 'posts', 'likes'));
     }

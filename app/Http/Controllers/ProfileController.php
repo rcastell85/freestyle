@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Profile;
+use App\Post;
+use App\Friend;
+use Auth;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -121,7 +124,25 @@ class ProfileController extends Controller
         //
     }
 
-    public function cargar(){
+    public function perfilId($id){
+      $perfil = Profile::find($id);
+      $posts = Post::where("user_id", "=", $perfil->id)->get();
 
+      return view("verPerfilUsuario", compact('perfil', 'posts'));
+    }
+
+    public function seguir($id){
+
+      $profile = Profile::find($id);
+      $user = Auth::user()->id;
+
+      $nuevoSeguidor = new Friend();
+
+      $nuevoSeguidor->user_id = $profile->id;
+      $nuevoSeguidor->friend_id = $user;
+
+      $nuevoSeguidor->save();
+
+      return redirect("verPerfilUsuario/$profile->id");
     }
 }

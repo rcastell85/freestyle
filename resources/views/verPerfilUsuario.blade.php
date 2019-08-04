@@ -33,7 +33,7 @@
 
             <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
                <li class="it nav-item">
-                 <a class="link-menu nav-link text-light" href="/crearPost">Nuevo Post +</a>
+                 <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}/seguido">Seguir</a>
                </li>
                <li class="it nav-item">
                  <a class="nav-link text-light" href="/buscar">Buscar</a>
@@ -77,27 +77,25 @@
               <div class="parteBajaPost">
                 <div class="like-share row">
                     <div class="likes col-md-6">
-
                         {{-- @if (!$post->likes->has(Auth::user()->id)) --}}
                           <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
                           </form>
+
+
                         {{-- @else --}}
                           <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
                           </form>
-                         {{-- @endif --}}
-                         @foreach ($likes as $value)
-                          @if ($post->id == $value)
-                            <p style="color:#fff">
-                              like
-                            </p>
-                          @endif
-                        @endforeach
+                      {{-- @endif --}}
+
+                        {{-- @foreach ($likes as $key => $value)
+                      <p>cantidad de likes: {{$value->where('post_id', '=', $value->post_id)->count()}}</p>
+                    @endforeach --}}
                     </div>
                   <div class="likes col-md-6">
                       <a href="#">Compartir</a>

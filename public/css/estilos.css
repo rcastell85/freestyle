@@ -12,10 +12,29 @@
   display:block;
   margin:auto;
   max-width: 100%;
-
 }
 .id-post{
   max-width: 99%;
+  background-color: #343a40;
+  color: #fff;
+  border-radius: 20px 20px 0px 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+}
+.row{
+  padding-left: 0;
+}
+.time-post{
+  padding-left: 0;
+  padding-right: 0;
+}
+.img-p{
+  border-radius: 50%;
+}
+.parteBajaPost{
+  background-color: #343a40;
+  border-radius: 0px 0px 20px 0px;
 }
 .container{
   max-width: 100%;
@@ -25,7 +44,7 @@
   background-color: #6c757d;
 }
 .usuarios {
-    border-radius:150px;
+  border-radius:150px;
 }
 .titleClass{
   margin-left: 44%;
@@ -51,10 +70,6 @@
 #botonPost{
   margin-left: 15%;
 }
-
-
-
-
   .card{
     background-color: transparent;
     border: none;

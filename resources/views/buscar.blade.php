@@ -28,45 +28,47 @@
 
                     <!-- PARTE CENTRAL DEL BODY ---------------------------->
 
-        <div class="centro col-md-9">
-          <div class="cuerpo-central">
-            <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
-               <li class="it nav-item">
-                 <a class="link-menu nav-link text-light" href="/inicio/">Inicio</a>
-               </li>
-               <li class="it nav-item">
-                 <a class="nav-link text-light" href="#">Seguidores</a>
-               </li>
-               <li class="it nav-item">
-                   <a class="nav-link text-light" href="#">Seguidos</a>
-               </li>
-           </ul><br>
+            <div class="centro col-md-9">
+              <div class="cuerpo-central">
+                <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
+                   <li class="it nav-item">
+                     <a class="link-menu nav-link text-light" href="/inicio/">Inicio</a>
+                   </li>
+                   <li class="it nav-item">
+                     <a class="nav-link text-light" href="#">Seguidores</a>
+                   </li>
+                   <li class="it nav-item">
+                       <a class="nav-link text-light" href="#">Seguidos</a>
+                   </li>
+               </ul><br>
 
-           {{-- {{ $users= User::find(1) }} --}}
+               {{-- {{ $users= User::find(1) }} --}}
 
-           {{-- <h4>Bienvenido {{ $perfil->name }}</h4> --}}
-           <p>Username: {{ auth()->user()->username }}</p>
+               {{-- <h4>Bienvenido {{ $perfil->name }}</h4> --}}
+               <p>Username: {{ auth()->user()->username }}</p>
 
-          <div class="search">
-            <form action="{{url('/buscar')}}" method="get">
-              <input type="text" name="search" role="search"value="" placeholder="Buscar..." style="width: 100%;">
-              <button type="submit" name="search">Buscar</button>
+              <div class="search">
+                <form action="{{url('/buscar')}}" method="get">
+                  <input type="text" name="search" role="search"value="" placeholder="Buscar..." style="width: 100%;">
+                  <button type="submit" name="search">Buscar</button>
 
-            </form>
+                </form>
 
-          </div>
-          <br>
-          {{-- @if(isset($message))
-          <h3>Resultado de la busqueda:{{$search}}</h3>
-          <div class="bg-warning"style="padding:20px">
-            {{$message}}
-          </div> --}}
+              </div>
+              <br>
+              {{-- @if(isset($message))
+              <h3>Resultado de la busqueda:{{$search}}</h3>
+              <div class="bg-warning"style="padding:20px">
+                {{$message}}
+              </div> --}}
 
 
           <div class="">
             @forelse ($perfiles as $perfil)
-              <img class="usuarios"src="/storage/profiles/{{$perfil->image}}" alt="" style="width: 50px;">
-                <h5>{{$perfil->name}}</h5>
+              <a href="/verPerfilUsuario/{{$perfil->id}}">
+                <img class="usuarios"src="/storage/profiles/{{$perfil->image}}" alt="" style="width: 50px;">
+                  <h5>{{$perfil->name}}</h5>
+              </a>
                   <hr>
             @empty
               <p>No hay usuarios</p>
@@ -74,14 +76,7 @@
           </div>
         </div>
       </div>
-
-
-
                       <!-- PARTE DERECHA DEL BODY ---------------------------------------->
-
-
-
-
-                   </div>
-                 </body>
-               @endsection
+    </div>
+  </body>
+@endsection

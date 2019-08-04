@@ -23,7 +23,7 @@
               @if (Route::has('login'))
                   <div class="top-right links text-dark">
                       @auth
-                          <a href="{{ url('/home') }}">Home</a>
+                          <a href="{{ url('/inicio') }}">Home</a>
                       @else
                           <a href="{{ route('login') }}">Login</a>
 
@@ -39,10 +39,9 @@
           <section class="segunda">
               <div class="seccion row">
                 <div class="col-md-6">
-                  <div class="title-blue text-dark parte-texto" style="width: 100% height: 500px;">
-                    <div class="">
-                      <h1 class="" style="font-weight: bold;">Conoce gente</h1>
-                      <h1>en todo</h1>
+                  <div class="title-blue parte-texto" style="width: 100% height: 500px;">
+                    <div class="text-info">
+                      <h1>Conoce gente en todo</h1>
                       <h1>el mundo</h1>
                     </div>
                     <div class="" style="margin-top: 50px">
@@ -71,10 +70,9 @@
                   <img src="/img/chicos-fondo-blanco.jpg" alt="" width="90%" style="padding-left: 60px;">
                 </div>
                 <div class="col-md-6">
-                  <div class="title-blue text-dark parte-texto" style="width: 100% height: 500px;">
-                    <div class="">
-                      <h1 class="" style="font-weight: bold;">Comparti</h1>
-                      <h1>todo tipo</h1>
+                  <div class="title-blue parte-texto" style="width: 100% height: 500px;">
+                    <div class="text-info">
+                      <h1 class="">Comparti todo tipo</h1>
                       <h1>de contenido</h1>
                     </div>
                     <div class="" style="margin-top: 50px">
@@ -86,8 +84,12 @@
           </section>
 
           <section class="tercera">
-            <div class="">
+            <div class="haters">
               <img  id="foto1" src="/img/chica-relax-2.jpg" alt="" style="width: 100%;  height: 650px; padding-top: 30px;">
+              <div class="txt">
+                <h1>Olvidate de los</h1>
+                <h1>haters</h1>
+              </div>
             </div>
           </section>
 
