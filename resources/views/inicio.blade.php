@@ -78,19 +78,19 @@
                 <div class="like-share row">
                     <div class="likes col-md-6">
 
-                        {{-- @if (!$post->likes->has(Auth::user()->id)) --}}
+                        @if (!$post->hearts->has(Auth::user()->id))
                           <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
                           </form>
-                        {{-- @else --}}
+                        @else
                           <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
                           </form>
-                         {{-- @endif --}}
+                         @endif
                          @foreach ($likes as $value)
                           @if ($post->id == $value)
                             <p style="color:#fff">

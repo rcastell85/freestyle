@@ -32,9 +32,17 @@
           <div class="cuerpo-central">
 
             <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
-               <li class="it nav-item">
-                 <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}/seguido">Seguir</a>
-               </li>
+
+                @if (in_array("$usuario", $seguido))
+                  <li class="it nav-item">
+                    <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}/seguido">Siguiendo</a>
+                  </li>
+                @else
+                  <li class="it nav-item">
+                    <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}/seguido">Seguir</a>
+                  </li>
+                @endif
+
                <li class="it nav-item">
                  <a class="nav-link text-light" href="/buscar">Buscar</a>
                </li>
