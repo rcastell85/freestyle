@@ -20,9 +20,9 @@ class InicioController extends Controller
     {
       $user = Auth::user()->id;
       $perfil = Profile::find($user);
-      $posts = Post::orderBy('updated_at',  'DESC')->get();
+      $posts = Post::orderBy('updated_at',  'DESC')->paginate(5);
 
-      $likes = Like::all();   //->firstWhere('post_id', '=', $post->post_id)->count();
+      // $likes = Like::all();   //->firstWhere('post_id', '=', $post->post_id)->count();
 
       // foreach ($likes as $key => $value) {
       //   dd($value->where('post_id', '=', $value->post_id)->count());

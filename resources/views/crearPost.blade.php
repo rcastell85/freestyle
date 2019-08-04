@@ -45,8 +45,8 @@
                           </div>
 
                         </div>
-                        <div class="postImg">
-                          <label for="postImg">Subi una imagen</label>
+                        <div class="postImg1">
+                          <label for="postImg1">Subi una imagen</label>
                           <br>
                           <input type="file" name="postImg" value="" placeholder="Subi lo que quieras...">
                         </div>

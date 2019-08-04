@@ -87,7 +87,7 @@
 
                 <div class="like-share row">
                     <div class="likes col-md-6">
-                        @if (!$post->likes->has(Auth::user()->id))
+                        {{-- @if (!$post->likes->has(Auth::user()->id)) --}}
                           <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
@@ -95,17 +95,17 @@
                           </form>
 
 
-                        @else
+                        {{-- @else
                           <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
                           </form>
-                      @endif
+                      @endif --}}
 
-                        @foreach ($likes as $key => $value)
+                        {{-- @foreach ($likes as $key => $value)
                       <p>cantidad de likes: {{$value->where('post_id', '=', $value->post_id)->count()}}</p>
-                    @endforeach
+                    @endforeach --}}
                     </div>
                   <div class="likes col-md-6">
                       <a href="#">Compartir</a>
@@ -119,7 +119,9 @@
                   <p>Este usuario no tiene posts</p>
                 @endforelse
 
-
+<div class="paginate">
+  {{$posts->render()}}
+</div>
           </div>
 
 

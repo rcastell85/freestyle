@@ -45,12 +45,13 @@
            {{-- {{ $users= User::find(1) }} --}}
 
            {{-- <h4>Bienvenido {{ $perfil->name }}</h4> --}}
-           <p>Username: {{ auth()->user()->username }}</p>
+           {{-- <p>Username: {{ auth()->user()->username }}</p> --}}
 
-          <div class="search">
+          <div class="search col-md-12">
+            <h2>Busca Gente:</h2>
             <form action="{{url('/buscar')}}" method="get">
-              <input type="text" name="search" role="search"value="" placeholder="Buscar..." style="width: 100%;">
-              <button type="submit" name="search">Buscar</button>
+              <input class="col-md-9" type="text" name="search" role="search"value="" placeholder="Buscar..." style="width: 100%;">
+              <button class="col-md-2"type="submit" name="search">Buscar</button>
 
             </form>
 
@@ -71,6 +72,10 @@
             @empty
               <p>No hay usuarios</p>
             @endforelse
+            <div class="paginate">
+              {{$perfiles->render()}}
+            </div>
+
           </div>
         </div>
       </div>
