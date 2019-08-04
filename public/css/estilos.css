@@ -62,13 +62,27 @@
 .menu-p{
   padding-left: 15px;
 }
+.form-control:hover {
+  background-color: #D9D9D9;
+}
+.form-control:focus {
+  background-color: transparent;
+  border: 1px solid #ced4da;
+}
+.form-control{
+  height: auto;
+}
+.inputPost{
+  width: 100%;
+  height: auto;
+}
 #menu-post{
   text-align: center;
   color: white;
-  margin-left: 40%;
+  margin-left: 36%;
 }
 #botonPost{
-  margin-left: 15%;
+  margin-left: 12%;
 }
   .card{
     background-color: transparent;

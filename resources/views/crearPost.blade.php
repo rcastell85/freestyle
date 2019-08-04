@@ -39,10 +39,11 @@
                         <input name="userId" type="hidden" value="{{ Auth::user()->id }}">
                         <input name="author" type="hidden" value="{{ Auth::user()->username }}">
                         <div class="input-group mb-3 input-group-lg">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">Titulo</span>
+                          <div class="inputPost input-group-prepend">
+                            <label for='textPost'class="input-group-text">Titulo</label>
+                            <input id="textPost"type="text" class="form-control" name="title"placeholder="Mi nuevo post....">
                           </div>
-                          <input type="text" class="form-control" name="title">
+
                         </div>
                         <div class="postImg">
                           <label for="postImg">Subi una imagen</label>
