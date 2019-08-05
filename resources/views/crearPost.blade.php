@@ -57,7 +57,7 @@
                           <input type="file" name="postVideo" value="" placeholder="Subi lo que quieras...">
                         </div>
                         <div id='botonPost'class="form-group">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="postear-b col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Postear') }}
                                 </button>

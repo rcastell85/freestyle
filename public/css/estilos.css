@@ -18,18 +18,28 @@
 
 
 }
+.h5-inicio{
+  margin-top: 36%;
+}
+.time-p{
+  margin-left: 915%;
+  margin-top: 21%;
+}
 .id-post{
   max-width: 100%;
+  padding-top: 1%;
+  padding-bottom: 1%;
   background-color: #343a40;
   color: #fff;
   border-radius: 20px 20px 0px 0;
   margin-left: 0;
   margin-right: 0;
-  /* padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 0px; */
+
 }
 .parteBajaPost{
+  max-width: 100%;
+  padding-top: 1%;
+  padding-bottom: 1%;
   background-color: #343a40;
   border-radius: 0px 0px 20px 20px;
 }
@@ -101,7 +111,19 @@
   padding-right: 0px;
     padding-left: 6%;
 }
+.postear-b{
+  margin-top: 5%;
+  margin-left: 31%;
 }
+.l-boton{
+  margin-left: 37%;
+}
+.compartir{
+  margin-left: 48%;
+}
+
+
+
 #menu-post{
   text-align: center;
   color: white;
@@ -175,6 +197,7 @@
         display: flex;
         flex-direction: column;
       }
+
       #user-img{
         display: flex;
         justify-content: center;
@@ -229,8 +252,66 @@
   }
 /*-----------------RESPONSIVE HOME ---------------------------------------------*/
 
-@media (max-width: 960px) {
+@media screen and (min-width: 992px) and (max-width:1200px) {
   .login{
     display: none;
   }
+  .l-boton{
+    margin-left: 20%;
+  }
+  .compartir{
+    margin-left: 61%;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:992px) {
+.h5-inicio{
+  margin-left: 92%;
+  margin-top: 45%;
+}
+.l-boton{
+  margin-left: 20%;
+}
+.compartir{
+  margin-left: 57%;
+}
+
+}
+
+@media screen and (min-width:576px) and (max-width:768px) {
+  .h5-inicio{
+    margin-left: 23%;
+      margin-top: 9%;
+  }
+  .time-p{
+    margin-top: 8%;
+    margin-left: 70%;
+  }
+  .postear-b{
+    margin-left: 35%;
+  }
+  .l-boton{
+    margin-left: 19%;
+  }
+  .compartir{
+    margin-left: 56%;
+  }
+}
+@media screen and (min-width:480px) and (max-width:576px) {
+  .h5-inicio{
+    margin-left: 22%;
+      margin-top: 9%;
+  }
+  .time-p{
+    margin-top: 8%;
+    margin-left: 70%;
+  }
+
+  .compartir{
+    margin-left: 48%;
+  }
+}
+
+@media screen and (min-width:320px and (max-width:480px)) {
+
 }

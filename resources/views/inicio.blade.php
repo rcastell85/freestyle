@@ -33,7 +33,7 @@
 
             <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
                <li class="it nav-item">
-                 <a class="link-menu nav-link text-light" href="/crearPost">Nuevo Post +</a>
+                 <a class="link-menu nav-link text-light" href="/crearPost">Nuevo Post</a>
                </li>
                <li class="it nav-item">
                  <a class="nav-link text-light" href="/buscar">Buscar</a>
@@ -53,14 +53,14 @@
       @forelse ($posts as $post)
         <div class="post">
           <div class="id-post row">
-              <div class="img-id-post col-md-1">
+              <div class="img-id-post col col-md-1">
                   <img class="img-p" src="/storage/profiles/{{$post->perfil->image}}" alt="" style="width:50px">
               </div>
-              <div class="nombre-id-post col-md-10" style="">
-                  <h5>{{$post->author}}</h5>
+              <div class="nombre-id-post col col-md-1" style="">
+                  <h5 class="h5-inicio">{{$post->author}}</h5>
               </div>
-              <div class="time-post col-md-1">
-                  <p class="" style="">2h.</p>
+              <div class="time-post col col-md-1">
+                  <p class="time-p" style="">2h.</p>
               </div>
           </div>
             <div class="">
@@ -78,19 +78,19 @@
           </div>
               <div class="parteBajaPost">
                 <div class="like-share row">
-                    <div class="likes col-md-6">
+                    <div class="likes col col-md-6">
 
                         {{-- @if (!$post->hearts->has(Auth::user()->id)) --}}
-                          <form class="" action="/like" method="post">
+                          <form class="col" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
-                              <button type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
+                              <button class="l-boton" type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
                           </form>
                         {{-- @else --}}
-                          <form class="" action="/like" method="post">
+                          <form class="col" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
-                              <button type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
+                              <button  class="l-boton" type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
                           </form>
                          {{-- @endif --}}
                          @foreach ($likes as $value)
@@ -101,8 +101,8 @@
                           @endif
                         @endforeach
                     </div>
-                  <div class="likes col-md-6">
-                      <a href="#">Compartir</a>
+                  <div class="likes col col-md-6">
+                      <a class="compartir"href="#">Compartir</a>
                   </div>
                 </div>
               </div>
