@@ -95,8 +95,13 @@
               <div class="col-md-2">
               </div>
               <div class="col-md-3">
-                <h2>ACERCA DE NOSOTROS</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h2>CONTACTANOS</h2>
+                <ul>
+                  <li>freestyle@gmail.com</li>
+                  <li>Av. Monroe 860</li>
+                  <li>Buenos Aires-Argentina</li>
+                  
+                </ul>
               </div>
               <div class="col-md-2">
               </div>

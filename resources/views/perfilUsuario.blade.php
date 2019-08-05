@@ -19,8 +19,8 @@
                     <ul class="lista-izquierda list-group"style="list-style: none";>
                       <li class='cambio list-group-item'><a href="/inicio">Inicio</a></li>
                       <li class='cambio list-group-item'><a href="/perfilUsuario">Perfil</a></li>
-                      <li class='cambio list-group-item' ><a href="#">Amigos</a></li>
-                      <li class='cambio list-group-item'><a href="#">Posteos</a></li>
+                      <li class='cambio list-group-item' ><a href="/buscar">Amigos</a></li>
+
 
                     </ul>
                   </section>
@@ -38,9 +38,9 @@
                <li class="it nav-item">
                  <a class="nav-link text-light" href="/buscar">Buscar</a>
                </li>
-               <li class="it nav-item">
-                   <a class="nav-link text-light" href="#">Link</a>
-               </li>
+               {{-- <li class="it nav-item">
+                   <a class="nav-link text-light" href="#"></a>
+               </li> --}}
             </ul><br>
 
             <h3>Datos de Contacto</h3>
@@ -90,11 +90,11 @@
                               <button class="l-boton" type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
                           </form>
                         {{-- @else --}}
-                          <form class="col" action="/like" method="post">
+                          {{-- <form class="col" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button  class="l-boton" type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
-                          </form>
+                          </form> --}}
                          {{-- @endif --}}
                          {{-- @foreach ($likes as $value)
                           @if ($post->id == $value)

@@ -82,21 +82,21 @@
                 <div class="like-share row">
 
                     <div class="likes col-md-3 col-sm-3">
-                        @foreach ($post->likes as $value)
-                          @if ($value->user_id == $user)
+                        {{-- @foreach ($post->likes as $value)
+                          @if ($value->user_id == $user) --}}
                           <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button class="l-boton" type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
                           </form>
-                        @else
-                          <form class="col" action="/like" method="post">
+                        {{-- @else --}}
+                          {{-- <form class="col" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button  class="l-boton" type="submit" name="button"><i class="fas fa-heart"></i>Ya no me gusta</button>
-                          </form>
-                        @endif
-                      @endforeach
+                          </form> --}}
+                        {{-- @endif
+                      @endforeach --}}
                     </div>
                     <div class="likes col col-md-6 col-sm-3">
 

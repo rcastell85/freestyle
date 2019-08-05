@@ -41,15 +41,12 @@
                       echo "string";
                     }
                 } --}}
-                foreach ($friend as $value) {
-                  dd($value->user->id);
-                }
                   <li class="it nav-item">
-                    
-                      <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}">Siguiendo</a>
-                    @else
+
+                      {{-- <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}">Siguiendo</a> --}}
+                    {{-- @else --}}
                       <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}/seguido">Seguir</a>
-                    @endif
+                    {{-- @endif --}}
                   </li>
 
 
@@ -61,14 +58,9 @@
                </li>
             </ul><br>
 
-            <h3>Datos de Contacto</h3>
-            <ul>
-              <li>Nombre: {{ $perfil->name }}</li>
-              <li>Apellido: {{$perfil->lastName}}</li>
-              <li>Email: {{auth()->user()->email}}</li>
-            </ul>
+           {{-- {{ $users= User::find(1) }} --}}
 
-
+           <h4>Bienvenido: {{ auth()->user()->username }}</h4>
 
       @forelse ($posts as $post)
         <div class="post">
@@ -96,7 +88,7 @@
           </div>
               <div class="parteBajaPost">
                 <div class="like-share row">
-                    <div class="likes col-md-6">
+                    <div class="likes col-md-3 col-sm-3">
                         {{-- @if (!$post->likes->has(Auth::user()->id)) --}}
                           <form class="" action="/like" method="post">
                               @csrf
@@ -106,18 +98,21 @@
 
 
                         {{-- @else --}}
-                          <form class="" action="/like" method="post">
+                          {{-- <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
-                          </form>
+                          </form> --}}
                       {{-- @endif --}}
 
                         {{-- @foreach ($likes as $key => $value)
                       <p>cantidad de likes: {{$value->where('post_id', '=', $value->post_id)->count()}}</p>
                     @endforeach --}}
                     </div>
-                  <div class="likes col-md-6">
+                    <div class="col-md-6 col-sm-6">
+
+                    </div>
+                  <div class="likes col-md-3 col-sm-3">
                       <a href="#">Compartir</a>
                   </div>
                 </div>

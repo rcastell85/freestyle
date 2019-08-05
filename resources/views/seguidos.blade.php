@@ -46,7 +46,7 @@
 
 
               <div class="search">
-                <h2>Seguidores:</h2>
+                <h2>Seguidos:</h2>
               </div>
               <br>
 
