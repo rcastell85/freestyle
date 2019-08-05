@@ -28,9 +28,15 @@ class FriendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function seguidores()
     {
-        //
+        $user = Auth::user()->id;
+        $seguidores = Friend::where('user_id', '=', $user)->select('friend_id')->get();
+        $perfiles = Profile::all();
+        $perfil = Profile::find($user);
+        
+
+        return view('seguidores', compact('seguidores', 'perfiles', 'user', 'perfil'));
     }
 
     /**

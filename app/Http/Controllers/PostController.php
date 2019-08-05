@@ -144,8 +144,9 @@ class PostController extends Controller
     public function mostrarPerfil(){
       $user = Auth::user()->id;
       $perfil = Profile::find($user);
-      $posts = Post::where('user_id', '=', $user)->orderBy('updated_at',  'DESC')->get();
-
+      $posts = Post::where('user_id', '=', $user)->orderBy('updated_at',  'DESC')->paginate(8);
+// dd($user);
+// exit;
       return view('perfilUsuario', compact('perfil', 'posts'));
     }
 

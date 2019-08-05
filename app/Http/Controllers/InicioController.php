@@ -23,7 +23,7 @@ class InicioController extends Controller
       $posts = Post::orderBy('updated_at',  'DESC')->paginate(5);
       $likes = Like::all()->pluck('post_id')->toArray();
 
-      return view('inicio', compact('perfil', 'posts', 'likeses', 'user'));
+      return view('inicio', compact('perfil', 'posts', 'likes', 'user'));
     }
 
     /**

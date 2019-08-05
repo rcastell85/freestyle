@@ -22,6 +22,7 @@
                       <li class='cambio list-group-item' ><a href="/buscar">Amigos</a></li>
                       <li class='cambio list-group-item'><a href="#">Posteos</a></li>
 
+
                     </ul>
                   </section>
                 </div>
