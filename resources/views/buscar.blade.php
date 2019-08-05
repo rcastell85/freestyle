@@ -19,13 +19,8 @@
                     <ul class="lista-izquierda list-group"style="list-style: none";>
                       <li class='cambio list-group-item'><a href="/inicio">Inicio</a></li>
                       <li class='cambio list-group-item'><a href="/perfilUsuario">Perfil</a></li>
-<<<<<<< HEAD
                       <li class='cambio list-group-item' ><a href="#">Seguidos</a></li>
                       <li class='cambio list-group-item'><a href="#">Seguidores</a></li>
-=======
-                      <li class='cambio list-group-item' ><a href="#">Amigos</a></li>
-                      <li class='cambio list-group-item'><a href="#">Posteos</a></li>
->>>>>>> e952aabdedfbfbdefea75445e81eddc9bbe67d68
 
                     </ul>
                   </section>

@@ -50,9 +50,14 @@
                </li>
             </ul><br>
 
-           {{-- {{ $users= User::find(1) }} --}}
+            <h3>Datos de Contacto</h3>
+            <ul>
+              <li>Nombre: {{ $perfil->name }}</li>
+              <li>Apellido: {{$perfil->lastName}}</li>
+              <li>Email: {{auth()->user()->email}}</li>
+            </ul>
 
-           <h4>Bienvenido: {{ auth()->user()->username }}</h4>
+
 
       @forelse ($posts as $post)
         <div class="post">
