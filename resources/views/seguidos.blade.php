@@ -43,18 +43,10 @@
                    </li>
                </ul><br>
 
-               {{-- {{ $users= User::find(1) }} --}}
 
-               {{-- <h4>Bienvenido {{ $perfil->name }}</h4> --}}
-               <p>Username: {{ auth()->user()->username }}</p>
 
               <div class="search">
-                <form action="{{url('/buscar')}}" method="get">
-                  <input type="text" name="search" role="search"value="" placeholder="Buscar..." style="width: 100%;">
-                  <button type="submit" name="search">Buscar</button>
-
-                </form>
-
+                <h2>Seguidores:</h2>
               </div>
               <br>
 
@@ -67,7 +59,7 @@
               </a>
                   <hr>
             @empty
-              <p>No hay usuarios</p>
+              <p style="text-align:center">No Sigues a Nadie</p>
             @endforelse
           </div>
         </div>

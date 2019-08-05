@@ -42,27 +42,13 @@
                </li>
            </ul><br>
 
-           {{-- {{ $users= User::find(1) }} --}}
-
-           {{-- <h4>Bienvenido {{ $perfil->name }}</h4> --}}
-           {{-- <p>Username: {{ auth()->user()->username }}</p> --}}
 
           <div class="search col-md-12">
             <h2>Busca Gente:</h2>
-            <form action="{{url('/buscar')}}" method="get">
-              <input class="col-md-9" type="text" name="search" role="search"value="" placeholder="Buscar..." style="width: 100%;">
-              <button class="col-md-2"type="submit" name="search">Buscar</button>
 
-            </form>
 
           </div>
           <br>
-          {{-- @if(isset($message))
-          <h3>Resultado de la busqueda:{{$search}}</h3>
-          <div class="bg-warning"style="padding:20px">
-            {{$message}}
-          </div> --}}
-
 
           <div class="">
             @forelse ($perfiles as $perfil)

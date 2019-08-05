@@ -33,13 +33,13 @@
 
             <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
                <li class="it nav-item">
-                 <a class="link-menu nav-link text-light" href="/crearPost">Nuevo Post</a>
+                 <a class="link-menu nav-link text-light" href="{{ url('/') }}">Home</a>
                </li>
                <li class="it nav-item">
-                 <a class="nav-link text-light" href="/buscar">Buscar</a>
+                 <a class="nav-link text-light" href="/crearPost">Nuevo Post</a>
                </li>
                <li class="it nav-item">
-                   <a class="nav-link text-light" href="#">Link</a>
+                   <a class="nav-link text-light" href="/buscar">Buscar</a>
                </li>
             </ul><br>
 
