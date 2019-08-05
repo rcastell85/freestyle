@@ -19,7 +19,7 @@
                     <ul class="lista-izquierda list-group"style="list-style: none";>
                       <li class='cambio list-group-item'><a href="/inicio">Inicio</a></li>
                       <li class='cambio list-group-item'><a href="/perfilUsuario">Perfil</a></li>
-                      <li class='cambio list-group-item' ><a href="#">Amigos</a></li>
+                      <li class='cambio list-group-item' ><a href="/buscar">Amigos</a></li>
                       <li class='cambio list-group-item'><a href="#">Posteos</a></li>
 
                     </ul>
@@ -35,10 +35,10 @@
                  <a class="link-menu nav-link text-light" href="/inicio/">Inicio</a>
                </li>
                <li class="it nav-item">
-                 <a class="nav-link text-light" href="#">Seguidores</a>
+                 <a class="nav-link text-light" href="/seguidores">Seguidores</a>
                </li>
                <li class="it nav-item">
-                   <a class="nav-link text-light" href="#">Seguidos</a>
+                   <a class="nav-link text-light" href="/seguidos">Seguidos</a>
                </li>
            </ul><br>
 

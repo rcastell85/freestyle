@@ -33,7 +33,7 @@
                            <a class="link-menu nav-link text-light" href="/inicio">Inicio</a>
                          </li>
                          <li class="it nav-item">
-                           <a class="nav-link text-light" href="#">Mis Amigos</a>
+                           <a class="nav-link text-light" href="/buscar">Mis Amigos</a>
                          </li>
                          <li class="it nav-item">
                              <a class="nav-link text-light" href="#">Link</a>
