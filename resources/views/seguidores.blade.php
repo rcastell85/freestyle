@@ -1,9 +1,6 @@
-
 @extends('layouts.app')
 
 @section('content')
-
-
 <body><br>
 
       <div class="cuerpo-inicio row">
@@ -22,7 +19,6 @@
                       <li class='cambio list-group-item'><a href="/perfilUsuario">Perfil</a></li>
                       <li class='cambio list-group-item' ><a href="/buscar">Amigos</a></li>
                       <li class='cambio list-group-item'><a href="#">Posteos</a></li>
-
                     </ul>
                   </section>
                 </div>
@@ -60,10 +56,10 @@
 
 
           <div class="">
-            @forelse ($seguidos as $seguido)
-              <a href="/verPerfilUsuario/{{$seguido->profile->id}}">
-                <img class="usuarios"src="/storage/profiles/{{$seguido->profile->image}}" alt="" style="width: 50px;">
-                  <h5>{{$seguido->profile->name}}</h5>
+            @forelse ($seguidores as $seguidor)
+              <a href="/verPerfilUsuario/{{$seguidor->seguidor->id}}">
+                <img class="usuarios"src="/storage/profiles/{{$seguidor->seguidor->image}}" alt="" style="width: 50px;">
+                  <h5>{{$seguidor->seguidor->name}}</h5>
               </a>
                   <hr>
             @empty

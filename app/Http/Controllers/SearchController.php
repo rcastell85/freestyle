@@ -68,7 +68,11 @@ class SearchController extends Controller
       $user = Auth::user()->id;
       $users = User::all();
       $perfil = Profile::find($user);
+<<<<<<< HEAD
       $perfiles = Profile::orderBy('name','asc')->paginate(5);
+=======
+      $perfiles = Profile::orderBy('name', 'asc')->paginate(5);
+>>>>>>> 011f93c46f9984376ba61e6a85905dc1d972363b
 
       return view('buscar', compact('user', 'perfiles','users', 'perfil'));  //
     }
