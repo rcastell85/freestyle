@@ -88,7 +88,7 @@
                       @endforeach --}}
 
                         {{-- @if (in_array("$usuario", $seguido, TRUE)) --}}
-                          <form class="" action="/like" method="post">
+                          <form class="col" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button class="l-boton" type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
@@ -109,7 +109,7 @@
                         @endforeach --}}
                     </div>
                   <div class="likes col col-md-6">
-                      <a href="/compartir/{{$post->id}}">Compartir</a>
+                      <a class='compartir' href="/compartir/{{$post->id}}">Compartir</a>
                   </div>
                 </div>
               </div>
