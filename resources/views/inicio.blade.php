@@ -78,10 +78,17 @@
           </div>
               <div class="parteBajaPost">
                 <div class="like-share row">
-                    <div class="likes col col-md-6">
+                    <div class="likes col-md-6">
+                      {{-- @foreach ($likeses as $key => $element)
+                        @if($likeses->where('post_id', '=', $post->id)->has($user))
+                          {{ "hola"}}
+                        @else
+                          {{ "chao" }}
+                        @endif
+                      @endforeach --}}
 
-                        {{-- @if (!$post->hearts->has(Auth::user()->id)) --}}
-                          <form class="col" action="/like" method="post">
+                        {{-- @if (in_array("$usuario", $seguido, TRUE)) --}}
+                          <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button class="l-boton" type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
@@ -93,16 +100,16 @@
                               <button  class="l-boton" type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
                           </form>
                          {{-- @endif --}}
-                         @foreach ($likes as $value)
+                         {{-- @foreach ($likeses as $value)
                           @if ($post->id == $value)
                             <p style="color:#fff">
                               like
                             </p>
                           @endif
-                        @endforeach
+                        @endforeach --}}
                     </div>
                   <div class="likes col col-md-6">
-                      <a class="compartir"href="#">Compartir</a>
+                      <a href="/compartir/{{$post->id}}">Compartir</a>
                   </div>
                 </div>
               </div>

@@ -65,3 +65,7 @@ Route::get('/perfilUsuario', 'PostController@mostrarPerfil');
 Route::get('/verPerfilUsuario/{id}', 'ProfileController@perfilId');
 
 Route::get('/verPerfilUsuario/{id}/seguido', 'ProfileController@seguir');
+
+Route::get('/compartir/{id}', 'PostController@compartir');
+
+Route::get('/seguidos', 'FriendController@index');

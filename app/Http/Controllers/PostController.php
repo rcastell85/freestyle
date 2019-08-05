@@ -149,4 +149,25 @@ class PostController extends Controller
 // exit;
       return view('perfilUsuario', compact('perfil', 'posts'));
     }
+
+    public function compartir($id){
+      $post = Post::find($id);
+
+      $nuevoPost = new Post();
+
+      if (isset($post->image)) {
+        $nuevoPost->image = $post->image;
+      } else {
+        $nuevoPost->video = $post->video;
+      }
+      $nuevoPost->title = $post->title;
+      $nuevoPost->author = $post->author;
+      $nuevoPost->user_id = $post->user_id;
+
+      $nuevoPost->save();
+
+      return redirect("inicio");
+
+
+    }
 }

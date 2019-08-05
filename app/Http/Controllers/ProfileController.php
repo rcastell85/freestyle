@@ -6,6 +6,7 @@ use App\User;
 use App\Profile;
 use App\Post;
 use App\Friend;
+use App\Like;
 use Auth;
 use Illuminate\Http\Request;
 

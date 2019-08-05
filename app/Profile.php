@@ -15,4 +15,8 @@ class Profile extends Model
   public function posts(){
     return $this->hasMany("App\Post", "user_id");
   }
+
+  public function friends(){
+    return $this->hasMany("App\Friend");
+  }
 }

@@ -18,7 +18,7 @@
                   <section class="informacion">
                     <ul class="lista-izquierda list-group"style="list-style: none";>
                       <li class='cambio list-group-item'><a href="/inicio">Inicio</a></li>
-                      <li class='cambio list-group-item'><a href="perfil.php">Perfil</a></li>
+                      <li class='cambio list-group-item'><a href="/perfilUsuario">Perfil</a></li>
                       <li class='cambio list-group-item' ><a href="#">Amigos</a></li>
                       <li class='cambio list-group-item'><a href="#">Posteos</a></li>
 
@@ -32,16 +32,15 @@
           <div class="cuerpo-central">
 
             <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
+                {{-- @dd($seguido) --}}
 
-                @if (in_array("$usuario", $seguido))
                   <li class="it nav-item">
-                    <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}/seguido">Siguiendo</a>
+                    @if (in_array("$usuario", $seguido, TRUE))
+                      <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}">Siguiendo</a>
+                    @else
+                      <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}/seguido">Seguir</a>
                   </li>
-                @else
-                  <li class="it nav-item">
-                    <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}/seguido">Seguir</a>
-                  </li>
-                @endif
+                  @endif
 
                <li class="it nav-item">
                  <a class="nav-link text-light" href="/buscar">Buscar</a>
@@ -54,9 +53,6 @@
            {{-- {{ $users= User::find(1) }} --}}
 
            <h4>Bienvenido: {{ auth()->user()->username }}</h4>
-
-
-
 
       @forelse ($posts as $post)
         <div class="post">
