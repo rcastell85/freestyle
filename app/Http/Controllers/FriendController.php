@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Profile;
-use App\User;
-use App\Post;
-use App\Like;
-use Auth;
 use Illuminate\Http\Request;
-
-class InicioController extends Controller
+use App\Friend;
+use App\Profile;
+use Auth;
+class FriendController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,12 +15,12 @@ class InicioController extends Controller
      */
     public function index()
     {
-      $user = Auth::user()->id;
-      $perfil = Profile::find($user);
-      $posts = Post::orderBy('updated_at',  'DESC')->paginate(5);
-      $likes = Like::all()->pluck('post_id')->toArray();
+        $user = Auth::user()->id;
+        $seguidos = Friend::all();
+        $perfiles = Profile::all();
+        $perfil = Profile::find($user);
 
-      return view('inicio', compact('perfil', 'posts', 'likeses', 'user'));
+        return view('seguidos', compact('seguidos', 'perfiles', 'user', 'perfil'));
     }
 
     /**
@@ -53,13 +50,9 @@ class InicioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-      $user = Auth::user()->id;
-      $perfil = Profile::find($user);
-      $posts = Post::orderBy('updated_at',  'DESC')->get();
-
-      return view('inicio', compact('perfil', 'posts'));
+        //
     }
 
     /**

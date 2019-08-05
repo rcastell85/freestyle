@@ -45,8 +45,8 @@
                           </div>
 
                         </div>
-                        <div class="postImg">
-                          <label for="postImg">Subi una imagen</label>
+                        <div class="postImg1">
+                          <label for="postImg1">Subi una imagen</label>
                           <br>
                           <input type="file" name="postImg" value="" placeholder="Subi lo que quieras...">
                         </div>
@@ -57,7 +57,7 @@
                           <input type="file" name="postVideo" value="" placeholder="Subi lo que quieras...">
                         </div>
                         <div id='botonPost'class="form-group">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="postear-b col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Postear') }}
                                 </button>

@@ -16,8 +16,8 @@
                     </div>
                     <section class="informacion">
                       <ul>
-                        <li><a href="perfil.php">Mi perfil</a></li>
-                        <li><a href="#">Mis Amigos</a></li>
+                        <li><a href="/perfilUsuario">Mi perfil</a></li>
+                        <li><a href="/seguidos">Mis Amigos</a></li>
                         <li><a href="#">Mis Posteos</a></li>
                         <li><a href="#">Mis Intereses</a></li>
                       </ul>
@@ -68,19 +68,20 @@
                       </div>
                       <div class="like-share row">
                           <div class="likes col-md-6">
-                              @if (!$post->likes->has(Auth::user()->id))
+
+                              {{-- @if (!$post->likes->has(Auth::user()->id)) --}}
                                 <form class="" action="/like" method="post">
                                     @csrf
                                     <input type="hidden" name="post_id" value="{{$post->id}}">
                                     <button type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
                                 </form>
-                              @else
+                              {{-- @else --}}
                                 <form class="" action="/like" method="post">
                                     @csrf
                                     <input type="hidden" name="post_id" value="{{$post->id}}">
                                     <button type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
                                 </form>
-                            @endif
+                            {{-- @endif --}}
                             <a href="#"><input name="like" type="hidden" value= 1>likes</a>
                           </div>
                         <div class="likes col-md-6">

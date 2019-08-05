@@ -70,7 +70,6 @@ class ProfileController extends Controller
         $nuevoPerfil->name = $req["name"];
         $nuevoPerfil->lastName = $req["lastName"];
         $nuevoPerfil->gender = $req["gender"];
-        $nuevoPerfil->interes = $req["interes"];
         $nuevoPerfil->user_id = $req["userId"];
 
         $nuevoPerfil->save();

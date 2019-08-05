@@ -16,7 +16,7 @@ class Post extends Model
     return $this->belongsTo("App\Profile", "user_id");
   }
 
-  public function hearts(){
-    return $this->belongsToMany("App\Like", "likes", "post_id", "user_id");
+  public function likes(){
+    return $this->hasMany("App\Like", "post_id", "id");
   }
 }

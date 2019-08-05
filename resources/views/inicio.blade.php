@@ -33,7 +33,7 @@
 
             <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
                <li class="it nav-item">
-                 <a class="link-menu nav-link text-light" href="/crearPost">Nuevo Post +</a>
+                 <a class="link-menu nav-link text-light" href="/crearPost">Nuevo Post</a>
                </li>
                <li class="it nav-item">
                  <a class="nav-link text-light" href="/buscar">Buscar</a>
@@ -53,23 +53,25 @@
       @forelse ($posts as $post)
         <div class="post">
           <div class="id-post row">
-              <div class="img-id-post col-md-1">
-                  <img class="img-p" src="/storage/profiles/{{$post->perfil->image}}" alt="" style="width: 40px;">
+              <div class="img-id-post col col-md-1">
+                  <img class="img-p" src="/storage/profiles/{{$post->perfil->image}}" alt="" style="width:50px">
               </div>
-              <div class="nombre-id-post col-md-10" style="padding-top:8px">
-                  <h5>{{$post->author}}</h5>
+              <div class="nombre-id-post col col-md-1" style="">
+                  <h5 class="h5-inicio">{{$post->author}}</h5>
               </div>
-              <div class="time-post col-md-1">
-                  <p class="" style="padding-top:8px; color: #fff;">2h.</p>
+              <div class="time-post col col-md-1">
+                  <p class="time-p" style="">2h.</p>
               </div>
           </div>
+            <div class="">
+            @empty ($post->video)
+                <img class='postImg'src="/storage/PostImg/{{$post->image}}" alt="" width="" height="">
+            @else
+                <video class="postImg"src="/storage/{{$post->video}}" muted loop controls width="700" height="500"> </video>
+            @endempty
+            </div>
 
 
-          @empty ($post->video)
-              <img class='postImg'src="/storage/PostImg/{{$post->image}}" alt="" width="700" height="500">
-          @else
-              <video class="postImg"src="/storage/{{$post->video}}" muted loop controls width="700" height="500"> </video>
-          @endempty
 
           <div class="titleClass nombre-id-post col-md-10">
               <h5>{{$post->title}}</h5>
@@ -89,13 +91,13 @@
                           <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
-                              <button type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
+                              <button class="l-boton" type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
                           </form>
                         {{-- @else --}}
-                          <form class="" action="/like" method="post">
+                          <form class="col" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
-                              <button type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
+                              <button  class="l-boton" type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
                           </form>
                          {{-- @endif --}}
                          {{-- @foreach ($likeses as $value)
@@ -106,7 +108,7 @@
                           @endif
                         @endforeach --}}
                     </div>
-                  <div class="likes col-md-6">
+                  <div class="likes col col-md-6">
                       <a href="/compartir/{{$post->id}}">Compartir</a>
                   </div>
                 </div>
@@ -116,8 +118,10 @@
                 @empty
                   <p>Este usuario no tiene posts</p>
                 @endforelse
-            </div>
 
+<div class="paginate">
+  {{$posts->render()}}
+</div>
           </div>
        </div>
   </body>

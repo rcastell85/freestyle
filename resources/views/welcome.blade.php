@@ -15,7 +15,7 @@
       <div class="main">
 
         <section class="cont">
-            <img  id="foto1" src="/img/millenials.jpg" alt="" style="width: 100%; height: 650px;">
+            <img  id="foto1" src="/img/millenials.jpg" alt="" style="">
             <div class="barra navbar navbar-expand-md navbar-light">
               <div class="logo">
                 <a href="{{ url('/') }}"><img class="" src="/img/logo5.png" alt="" style="width: 80%;"></a>
@@ -23,7 +23,7 @@
               @if (Route::has('login'))
                   <div class="top-right links text-dark">
                       @auth
-                          <a href="{{ url('/inicio') }}">Home</a>
+                          <a style='font-size:33px'href="{{ url('/inicio') }}">Home</a>
                       @else
                           <a href="{{ route('login') }}">Login</a>
 
@@ -50,14 +50,15 @@
                   </div>
                 </div>
                 <div class="col-md-6 img-lateral">
-                  <img src="/img/31301123-multi-ethnic-people-social-networking.jpg" alt="" width="90%" style="height: 400px;">
+                  <img src="/img/31301123-multi-ethnic-people-social-networking.jpg" alt="" style="">
                 </div>
               </div>
           </section>
 
           <section class="tercera">
             <div class="imagen-padre">
-                <img  id="foto1" src="/img/jump_people_beach.jpg" alt="" style="width: 100%;  height: 650px; padding-top: 30px;">
+                <img  id="" src="/img/jump_people_beach.jpg" alt="" style="
+                ">
               <div class="">
                 <button type="button" name="button"></button>
               </div>
@@ -67,7 +68,7 @@
           <section class="segunda">
               <div class="seccion row">
                 <div class="col-md-6 img-lateral">
-                  <img src="/img/chicos-fondo-blanco.jpg" alt="" width="90%" style="padding-left: 60px;">
+                  <img src="/img/nueva.jpg" alt="" style="">
                 </div>
                 <div class="col-md-6">
                   <div class="title-blue parte-texto" style="width: 100% height: 500px;">
@@ -85,12 +86,8 @@
 
           <section class="tercera">
             <div class="haters">
-              <img  id="foto1" src="/img/chica-relax-2.jpg" alt="" style="width: 100%;  height: 650px; padding-top: 30px;">
-              <div class="txt">
-                <h1>Olvidate de los</h1>
-                <h1>haters</h1>
+              <img  id="" src="/img/chica-relax-2.jpg" alt="" style="width: 100%;  height: 650px; padding-top: 30px;">
               </div>
-            </div>
           </section>
 
           <footer class="bg-dark">
