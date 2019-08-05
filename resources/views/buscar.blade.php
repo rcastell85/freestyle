@@ -18,9 +18,9 @@
                   <section class="informacion">
                     <ul class="lista-izquierda list-group"style="list-style: none";>
                       <li class='cambio list-group-item'><a href="/inicio">Inicio</a></li>
-                      <li class='cambio list-group-item'><a href="perfil.php">Perfil</a></li>
-                      <li class='cambio list-group-item' ><a href="#">Amigos</a></li>
-                      <li class='cambio list-group-item'><a href="#">Posteos</a></li>
+                      <li class='cambio list-group-item'><a href="/perfilUsuario">Perfil</a></li>
+                      <li class='cambio list-group-item' ><a href="#">Seguidos</a></li>
+                      <li class='cambio list-group-item'><a href="#">Seguidores</a></li>
 
                     </ul>
                   </section>
