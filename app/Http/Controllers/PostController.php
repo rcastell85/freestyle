@@ -151,6 +151,7 @@ class PostController extends Controller
     }
 
     public function compartir($id){
+      $user = Auth::user()->username;
       $post = Post::find($id);
 
       $nuevoPost = new Post();
@@ -161,7 +162,7 @@ class PostController extends Controller
         $nuevoPost->video = $post->video;
       }
       $nuevoPost->title = $post->title;
-      $nuevoPost->author = $post->author;
+      $nuevoPost->author = $user;
       $nuevoPost->user_id = $post->user_id;
 
       $nuevoPost->save();
