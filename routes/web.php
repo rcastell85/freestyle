@@ -70,3 +70,9 @@ Route::get('/compartir/{id}', 'PostController@compartir');
 
 Route::get('/seguidos', 'FriendController@index');
 Route::get('/seguidores', 'FriendController@seguidores');
+
+Route::get('/instalar', function(){
+    Artisan::call("storage:link");
+    Artisan::call("migrate");
+    Artisan::call("seed");
+});
