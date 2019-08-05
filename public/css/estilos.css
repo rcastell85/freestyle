@@ -123,7 +123,10 @@
 }
 
 
-
+#fotico{
+  text-decoration: none;
+  color: #fff;
+}
 #menu-post{
   text-align: center;
   color: white;
