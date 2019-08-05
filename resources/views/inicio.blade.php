@@ -54,22 +54,24 @@
         <div class="post">
           <div class="id-post row">
               <div class="img-id-post col-md-1">
-                  <img class="img-p" src="/storage/profiles/{{$post->perfil->image}}" alt="" style="width: 40px;">
+                  <img class="img-p" src="/storage/profiles/{{$post->perfil->image}}" alt="" style="width:50px">
               </div>
-              <div class="nombre-id-post col-md-10" style="padding-top:8px">
+              <div class="nombre-id-post col-md-10" style="">
                   <h5>{{$post->author}}</h5>
               </div>
               <div class="time-post col-md-1">
-                  <p class="" style="padding-top:8px; color: #fff;">2h.</p>
+                  <p class="" style="">2h.</p>
               </div>
           </div>
+            <div class="">
+            @empty ($post->video)
+                <img class='postImg'src="/storage/PostImg/{{$post->image}}" alt="" width="" height="">
+            @else
+                <video class="postImg"src="/storage/{{$post->video}}" muted loop controls width="700" height="500"> </video>
+            @endempty
+            </div>
 
 
-          @empty ($post->video)
-              <img class='postImg'src="/storage/PostImg/{{$post->image}}" alt="" width="700" height="500">
-          @else
-              <video class="postImg"src="/storage/{{$post->video}}" muted loop controls width="700" height="500"> </video>
-          @endempty
 
           <div class="titleClass nombre-id-post col-md-10">
               <h5>{{$post->title}}</h5>
@@ -77,37 +79,20 @@
               <div class="parteBajaPost">
                 <div class="like-share row">
                     <div class="likes col-md-6">
-<<<<<<< HEAD
-                        {{-- @if (!$post->likes->has(Auth::user()->id)) --}}
-=======
 
-                        @if (!$post->hearts->has(Auth::user()->id))
->>>>>>> 9d8e47b93f8f5a66899c0c40ca2d90bad09b1a6a
+                        {{-- @if (!$post->hearts->has(Auth::user()->id)) --}}
                           <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
                           </form>
-<<<<<<< HEAD
-
-
-                        {{-- @else
-=======
-                        @else
->>>>>>> 9d8e47b93f8f5a66899c0c40ca2d90bad09b1a6a
+                        {{-- @else --}}
                           <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
                               <button type="submit" name="button"><i class="fas  fa-heart"></i>Ya no me gusta</button>
                           </form>
-<<<<<<< HEAD
-                      @endif --}}
-
-                        {{-- @foreach ($likes as $key => $value)
-                      <p>cantidad de likes: {{$value->where('post_id', '=', $value->post_id)->count()}}</p>
-                    @endforeach --}}
-=======
-                         @endif
+                         {{-- @endif --}}
                          @foreach ($likes as $value)
                           @if ($post->id == $value)
                             <p style="color:#fff">
@@ -115,7 +100,6 @@
                             </p>
                           @endif
                         @endforeach
->>>>>>> 9d8e47b93f8f5a66899c0c40ca2d90bad09b1a6a
                     </div>
                   <div class="likes col-md-6">
                       <a href="#">Compartir</a>
@@ -127,15 +111,10 @@
                 @empty
                   <p>Este usuario no tiene posts</p>
                 @endforelse
-<<<<<<< HEAD
 
 <div class="paginate">
   {{$posts->render()}}
 </div>
-=======
-            </div>
-
->>>>>>> 9d8e47b93f8f5a66899c0c40ca2d90bad09b1a6a
           </div>
        </div>
   </body>

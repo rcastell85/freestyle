@@ -9,23 +9,29 @@
     margin-left: 2%;
 }
 .postImg{
-  display:block;
-  margin:auto;
-<<<<<<< HEAD
-  max-width: 75%;
 
-=======
-  max-width: 100%;
->>>>>>> 9d8e47b93f8f5a66899c0c40ca2d90bad09b1a6a
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4%;
+  display: block;
+
+
 }
 .id-post{
-  max-width: 99%;
+  max-width: 100%;
   background-color: #343a40;
   color: #fff;
   border-radius: 20px 20px 0px 0;
-  padding-top: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  /* padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 0px;
+  padding-left: 0px; */
+}
+.parteBajaPost{
+  background-color: #343a40;
+  border-radius: 0px 0px 20px 20px;
 }
 .row{
   padding-left: 0;
@@ -37,10 +43,7 @@
 .img-p{
   border-radius: 50%;
 }
-.parteBajaPost{
-  background-color: #343a40;
-  border-radius: 0px 0px 20px 0px;
-}
+
 .container{
   max-width: 100%;
   padding: 0;
@@ -107,7 +110,6 @@
 #botonPost{
   margin-left: 12%;
 }
-<<<<<<< HEAD
 #padre{
   padding-top: 3%;
   display: inline-flex;
@@ -118,9 +120,6 @@
 
 
 
-
-=======
->>>>>>> 9d8e47b93f8f5a66899c0c40ca2d90bad09b1a6a
   .card{
     background-color: transparent;
     border: none;

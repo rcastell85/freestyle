@@ -20,23 +20,8 @@ class InicioController extends Controller
     {
       $user = Auth::user()->id;
       $perfil = Profile::find($user);
-<<<<<<< HEAD
       $posts = Post::orderBy('updated_at',  'DESC')->paginate(5);
-
-      // $likes = Like::all();   //->firstWhere('post_id', '=', $post->post_id)->count();
-
-      // foreach ($likes as $key => $value) {
-      //   dd($value->where('post_id', '=', $value->post_id)->count());
-      // }
-      // foreach ($posts as $value) {
-      //   dd($value);
-      // }
-
-
-=======
-      $posts = Post::orderBy('updated_at',  'DESC')->get();
       $likes = Like::all()->pluck('post_id')->toArray();
->>>>>>> 9d8e47b93f8f5a66899c0c40ca2d90bad09b1a6a
 
       return view('inicio', compact('perfil', 'posts', 'likes'));
     }
