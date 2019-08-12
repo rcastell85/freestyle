@@ -38,6 +38,7 @@
                 @csrf
                         <input name="userId" type="hidden" value="{{ Auth::user()->id }}">
                         <input name="author" type="hidden" value="{{ Auth::user()->username }}">
+                        <input type="hidden" name="photo" value="{{ Auth::user()->profile->image }}">
                         <div class="input-group mb-3 input-group-lg">
                           <div class="inputPost input-group-prepend">
                             <label for='textPost'class="input-group-text">Titulo</label>

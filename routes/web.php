@@ -54,6 +54,7 @@ Route::post('/crearPost', 'PostController@store');
 Route::get('/crearPost', 'PostController@show');
 
 Route::post('/like', 'PostController@like');
+Route::post('/dislike', 'PostController@dislike');
 
 Route::post('/buscar', 'SearchController@index');
 Route::get('/buscar', 'SearchController@show');
@@ -61,7 +62,7 @@ Route::get('/buscar', 'SearchController@show');
 Route::get('/perfilUsuario', function(){
   return view('perfilUsuario');
 });
-Route::get('/perfilUsuario', 'PostController@mostrarPerfil');
+Route::get('/perfilUsuario', 'ProfileController@mostrarPerfil');
 Route::get('/verPerfilUsuario/{id}', 'ProfileController@perfilId');
 
 Route::get('/verPerfilUsuario/{id}/seguido', 'ProfileController@seguir');
@@ -71,8 +72,8 @@ Route::get('/compartir/{id}', 'PostController@compartir');
 Route::get('/seguidos', 'FriendController@index');
 Route::get('/seguidores', 'FriendController@seguidores');
 
-Route::get('/instalar', function(){
-    Artisan::call("storage:link");
-    Artisan::call("migrate");
-    Artisan::call("seed");
-});
+// Route::get('/instalar', function(){
+//     Artisan::call("storage:link");
+//     Artisan::call("migrate");
+//     Artisan::call("seed");
+// });

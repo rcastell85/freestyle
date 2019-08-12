@@ -53,7 +53,7 @@
             @forelse ($seguidores as $seguidor)
               <a href="/verPerfilUsuario/{{$seguidor->seguidor->id}}">
                 <img class="usuarios"src="/storage/profiles/{{$seguidor->seguidor->image}}" alt="" style="width: 50px;">
-                  <h5>{{$seguidor->seguidor->name}}</h5>
+                  <h5 style="color: black">{{$seguidor->seguidor->name}} </h5>
               </a>
                   <hr>
             @empty

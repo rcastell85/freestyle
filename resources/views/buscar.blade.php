@@ -54,7 +54,7 @@
             @forelse ($perfiles as $perfil)
               <a href="/verPerfilUsuario/{{$perfil->id}}">
                 <img class="usuarios"src="/storage/profiles/{{$perfil->image}}" alt="" style="width: 50px;">
-                  <h5>{{$perfil->name}}</h5>
+                  <h5 style="color: black;">{{$perfil->name}}</h5>
               </a>
                   <hr>
             @empty

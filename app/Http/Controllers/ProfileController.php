@@ -127,12 +127,21 @@ class ProfileController extends Controller
     public function perfilId($id){
       $usuario = Auth::user()->id;
       $perfil = Profile::find($id);
-      $friend = Friend::orderBy('user_id')->get();
+      $friend = Friend::where('friend_id', '=', $usuario)->get();
       $posts = Post::where("user_id", "=", $perfil->id)->get();
-      
 
       return view("verPerfilUsuario", compact('perfil', 'posts', 'usuario', 'friend'));
     }
+
+
+    public function mostrarPerfil(){
+      $user = Auth::user()->id;
+      $perfil = Profile::find($user);
+      $posts = Post::where('user_id', '=', $user)->orderBy('updated_at',  'DESC')->get();
+
+      return view('perfilUsuario', compact('perfil', 'posts'));
+    }
+
 
     public function seguir($id){
 

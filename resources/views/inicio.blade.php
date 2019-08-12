@@ -27,8 +27,10 @@
                 </div>
 
                     <!-- PARTE CENTRAL DEL BODY ---------------------------->
+        <div class="col-md-1">
 
-        <div class="centro col-md-9">
+        </div>
+        <div class="centro col-md-7">
           <div class="cuerpo-central">
 
             <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
@@ -53,19 +55,21 @@
       @forelse ($posts as $post)
         <div class="post">
           <div class="id-post row">
-              <div class="img-id-post col col-md-1" id="fotico">
-                <a href="/verPerfilUsuario/{{$perfil->id}}">
-                  <img class="img-p" src="/storage/profiles/{{$post->perfil->image}}" alt="" style="width:50px">
+              <div class="img-id-post col-md-2" id="fotico">
+                <a href="/verPerfilUsuario/{{$perfil->id}}" class="perfil-username"></a>
+                  <img class="img-p" src="/storage/profiles/{{$post->photo}}" alt="" style="width:50px">
               </div>
-              <div class="nombre-id-post col col-md-1" id="fotico">
-                  <h5 class="h5-inicio">{{$post->author}}</h5>
+              <div class="nombre-id-post col-md-2">
+                  <h5 class="h5-inicio">{{$post->author}}</h1>
               </div>
-              </a>
-              <div class="time-post col col-md-1">
-                  <p class="time-p" style="">2h.</p>
+              <div class="col-md-5 titulo">
+                <h3 class="">{{$post->title}}</h3>
+              </div>
+              <div class="time-post col-md-3">
+                  <p class="time-p" style="">{{$post->created_at->diffForHumans()}}</p>
               </div>
           </div>
-            <div class="">
+            <div class="contenido-post">
             @empty ($post->video)
                 <img class='postImg'src="/storage/PostImg/{{$post->image}}" alt="" width="" height="">
             @else
@@ -73,49 +77,47 @@
             @endempty
             </div>
 
-
-
-          <div class="titleClass nombre-id-post col-md-10">
-              <h5>{{$post->title}}</h5>
-          </div>
               <div class="parteBajaPost">
                 <div class="like-share row">
 
-                    <div class="likes col-md-3 col-sm-3">
-                        {{-- @foreach ($post->likes as $value)
-                          @if ($value->user_id == $user) --}}
+                    <div class="likes col-md-4 col-sm-4">
+                        @if (!$post->likes->contains('user_id', $user))
                           <form class="" action="/like" method="post">
                               @csrf
                               <input type="hidden" name="post_id" value="{{$post->id}}">
-                              <button class="l-boton" type="submit" name="button"><i class="far fa-heart"></i>Me gusta</button>
+                              <button class="l-boton" type="submit" name="button"><a href="#" class="lk"><i class="far fa-heart"> Me gusta </i></a></button>
                           </form>
-                        {{-- @else --}}
-                          {{-- <form class="col" action="/like" method="post">
-                              @csrf
-                              <input type="hidden" name="post_id" value="{{$post->id}}">
-                              <button  class="l-boton" type="submit" name="button"><i class="fas fa-heart"></i>Ya no me gusta</button>
-                          </form> --}}
-                        {{-- @endif
-                      @endforeach --}}
+                         @else
+                           <form class="" action="/dislike" method="post">
+                               @csrf
+                               <input type="hidden" name="like_id" value="{{$post->likes->where('user_id', '=', $user)}}">
+                               <button  class="l-boton" type="submit" name="button"><a href="#" class="lk"><i class="fas fa-heart"> Ya no me gusta</i></a></button>
+                           </form>
+                        @endif
                     </div>
-                    <div class="likes col col-md-6 col-sm-3">
-
+                    <div class="likes col-md-4 col-sm-4 contador">
+                      <p class="text-white">{{$post->likes->count()}}</p>
                     </div>
-                  <div class="likes col col-md-3 col-sm-3">
-                      <a href="/compartir/{{$post->id}}">Compartir</a>
+                  <div class="likes col col-md-4 col-sm-4 text-white share">
+                      <a class="link-share" href="/compartir/{{$post->id}}">Compartir  <i class="fas fa-share"></i></a>
                   </div>
                 </div>
               </div>
-                    <hr>
-
+              <div class="titleClass nombre-id-post col-md-12 col-sm-12">
+                  <h5><a href="#" class="lk"><strong>{{$post->author}}</strong></a></h5><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+          </div>
                 @empty
                   <p>Este usuario no tiene posts</p>
                 @endforelse
 
 <div class="paginate">
-  {{$posts->render()}}
+  {{-- {{$posts->render()}} --}}
 </div>
           </div>
+       </div>
+       <div class="col-md-1">
+
        </div>
   </body>
 @endsection

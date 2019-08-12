@@ -20,10 +20,10 @@ class InicioController extends Controller
     {
       $user = Auth::user()->id;
       $perfil = Profile::find($user);
-      $posts = Post::orderBy('updated_at',  'DESC')->paginate(5);
+      $posts = Post::orderBy('updated_at',  'DESC')->get();
+      $autores = Post::select('author')->get();
       $likes = Like::all();
-      
-
+    
 
       return view('inicio', compact('perfil', 'posts', 'likes', 'user'));
     }

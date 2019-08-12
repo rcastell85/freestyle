@@ -8,6 +8,7 @@ use App\Post;
 use Auth;
 use App\Like;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection as Collection;
 
 class PostController extends Controller
 {
@@ -71,6 +72,7 @@ class PostController extends Controller
           $nuevoPost->video = $nombreArchivoVideo;
         }
 
+        $nuevoPost->photo = $req["photo"];
         $nuevoPost->title = $req["title"];
         $nuevoPost->author = $req["author"];
         $nuevoPost->user_id = $req["userId"];
@@ -141,14 +143,30 @@ class PostController extends Controller
       return redirect('/inicio');
     }
 
+
+    public function dislike(Request $req){
+      $user = Auth::user()->id;
+
+      $array = json_decode($req["like_id"], true);
+
+      foreach ($array as $key) {
+        $like_post = Like::find($key["id"]);
+      }
+      $like_post->delete();
+
+      return redirect('/inicio');
+    }
+
+
     public function mostrarPerfil(){
       $user = Auth::user()->id;
       $perfil = Profile::find($user);
-      $posts = Post::where('user_id', '=', $user)->orderBy('updated_at',  'DESC')->paginate(8);
+      $posts = Post::where('user_id', '=', $user)->orderBy('updated_at',  'DESC')->get();
 // dd($user);
 // exit;
       return view('perfilUsuario', compact('perfil', 'posts'));
     }
+
 
     public function compartir($id){
       $user = Auth::user()->username;
@@ -161,6 +179,7 @@ class PostController extends Controller
       } else {
         $nuevoPost->video = $post->video;
       }
+      $nuevoPost->photo = Auth::user()->profile->image;
       $nuevoPost->title = $post->title;
       $nuevoPost->author = $user;
       $nuevoPost->user_id = $post->user_id;

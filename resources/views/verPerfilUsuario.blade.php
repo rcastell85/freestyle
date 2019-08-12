@@ -32,21 +32,13 @@
           <div class="cuerpo-central">
 
             <ul class="menu-p nav nav-pills nav-justified text-white bg-dark btn-lg">
-                {{-- @dd($seguido) --}}
-                {{-- foreach ($friend as $value) {
 
-                    if ($value->friend_id == $usuario) {
-                      echo "si";
-                    } else {
-                      echo "string";
-                    }
-                } --}}
                   <li class="it nav-item">
-
-                      {{-- <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}">Siguiendo</a> --}}
-                    {{-- @else --}}
+                    @if ($friend->contains('user_id', $perfil->id))
+                      <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}/seguido">Siguiendo</a>
+                    @else
                       <a class="link-menu nav-link text-light" href="/verPerfilUsuario/{{$perfil->id}}/seguido">Seguir</a>
-                    {{-- @endif --}}
+                    @endif
                   </li>
 
 
